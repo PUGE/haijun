@@ -36,7 +36,7 @@
         }
         $('#imgList').style.width = imgWidth + 1 + 'px'
         $('#o-home').style.width = imgWidth + $tool.getScreenInfo().clientWidth + 1 +'px'
-      }, 0)
+      }, 2000)
     }
   }
 </script>

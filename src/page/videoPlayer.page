@@ -1,6 +1,6 @@
 <template lang="pug">
 .video-box#videoBox
-  video(src="@&enter.mp4&", muted, id="videoPlay", x5-video-player-type='h5', x5-video-player-fullscreen='true')
+  video(src="@&enter.mp4&", muted, id="videoPlay", x5-video-player-type='h5', x5-video-player-fullscreen='true',  x5-video-orientation="landscape")
 </template>
 
 <script>

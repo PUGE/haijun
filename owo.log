@@ -1123,3 +1123,121 @@
 16:48:05.523 DEBUG 文件处理成功: 
 16:48:05.761 INFO  读取成功: C:\Users\PG\Documents\GitHub\haijun\src\resource\enter.mp4 
 16:48:05.770 INFO  写入文件: C:\Users\PG\Documents\GitHub\haijun\dist\static\resource\enter.mp4 
+16:56:20.705 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\videoPlayer.page 
+16:56:20.705 INFO  --------------------------- 开始编译 --------------------------- 
+16:56:20.705 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+16:56:20.705 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\videoPlayer.page 
+16:56:20.705 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+16:56:20.705 DEBUG 读取网页标题: 页面 
+16:56:20.705 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+16:56:20.705 DEBUG 处理模板: ./src/page/home.page 
+16:56:20.724 DEBUG 处理模板: ./src/page/videoPlayer.page 
+16:56:20.730 DEBUG 缓存模板: ./src/page/videoPlayer.page 
+16:56:20.736 DEBUG 处理模板: ./src/page/plane.page 
+16:56:20.749 DEBUG 缓存模板: ./src/page/plane.page 
+16:56:20.751 DEBUG 缓存模板: ./src/page/home.page 
+16:56:20.752 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\plane-bg.jpg 
+16:56:20.760 INFO  工程中只有一个页面! 
+16:56:20.770 DEBUG 页面中不包含切换动画! 
+16:56:20.868 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+16:56:20.868 DEBUG 外部脚本数量: 1 
+16:56:20.868 DEBUG 处理脚本: gif 
+16:56:20.868 DEBUG 使用bable处理脚本! 
+16:56:20.868 DEBUG 判断是否可以输出Html! 
+16:56:20.868 DEBUG 还有没有经过处理的资源! 
+16:56:20.869 DEBUG 文件处理成功: 
+16:56:20.869 DEBUG 文件处理成功: 
+16:56:20.981 DEBUG 需要经过特殊处理的css: [[".o-videoPlayer .video-box ",".o-videoPlayer "],[".o-plane .plane-box ",".o-plane "],[".o-home .main-box ",".o-home "]] 
+16:56:20.981 DEBUG 判断是否可以输出Html! 
+16:56:20.981 DEBUG 准备输出html! 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\enter.mp4 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\1.jpg 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\2.jpg 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\3.jpg 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\4.jpg 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\5.jpg 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\6.jpg 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\7.jpg 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\8.png 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\9.png 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\10.jpg 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\11.png 
+16:56:20.982 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\12.png 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\plane.png 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\people.png 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\people.png 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\hand.png 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\1.jpg 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\2.jpg 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\3.jpg 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\4.jpg 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\5.jpg 
+16:56:20.983 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\6.jpg 
+16:56:20.984 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\7.jpg 
+16:56:20.984 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\8.png 
+16:56:20.984 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\9.png 
+16:56:20.984 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\10.jpg 
+16:56:20.984 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\11.png 
+16:56:20.984 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\12.png 
+16:56:20.984 DEBUG 开始美化html 
+16:56:20.996 INFO  发送重新页面需要刷新命令! 
+16:56:20.997 DEBUG 文件处理成功: 
+16:58:30.741 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+16:58:30.741 INFO  --------------------------- 开始编译 --------------------------- 
+16:58:30.741 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+16:58:30.741 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+16:58:30.741 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+16:58:30.741 DEBUG 读取网页标题: 页面 
+16:58:30.741 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+16:58:30.741 DEBUG 处理模板: ./src/page/home.page 
+16:58:30.753 DEBUG 处理模板: ./src/page/videoPlayer.page 
+16:58:30.759 DEBUG 缓存模板: ./src/page/videoPlayer.page 
+16:58:30.764 DEBUG 处理模板: ./src/page/plane.page 
+16:58:30.771 DEBUG 缓存模板: ./src/page/plane.page 
+16:58:30.774 DEBUG 缓存模板: ./src/page/home.page 
+16:58:30.774 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\plane-bg.jpg 
+16:58:30.775 INFO  工程中只有一个页面! 
+16:58:30.776 DEBUG 页面中不包含切换动画! 
+16:58:30.877 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+16:58:30.877 DEBUG 外部脚本数量: 1 
+16:58:30.877 DEBUG 处理脚本: gif 
+16:58:30.877 DEBUG 使用bable处理脚本! 
+16:58:30.877 DEBUG 判断是否可以输出Html! 
+16:58:30.877 DEBUG 还有没有经过处理的资源! 
+16:58:30.878 DEBUG 文件处理成功: 
+16:58:30.878 DEBUG 文件处理成功: 
+16:58:30.988 DEBUG 需要经过特殊处理的css: [[".o-videoPlayer .video-box ",".o-videoPlayer "],[".o-plane .plane-box ",".o-plane "],[".o-home .main-box ",".o-home "]] 
+16:58:30.988 DEBUG 判断是否可以输出Html! 
+16:58:30.988 DEBUG 准备输出html! 
+16:58:30.988 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\enter.mp4 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\1.jpg 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\2.jpg 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\3.jpg 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\4.jpg 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\5.jpg 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\6.jpg 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\7.jpg 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\8.png 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\9.png 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\10.jpg 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\11.png 
+16:58:30.989 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\12.png 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\plane.png 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\people.png 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\people.png 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\hand.png 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\1.jpg 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\2.jpg 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\3.jpg 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\4.jpg 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\5.jpg 
+16:58:30.990 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\6.jpg 
+16:58:30.991 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\7.jpg 
+16:58:30.991 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\8.png 
+16:58:30.991 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\9.png 
+16:58:30.991 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\10.jpg 
+16:58:30.991 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\11.png 
+16:58:30.991 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\12.png 
+16:58:30.991 DEBUG 开始美化html 
+16:58:31.002 INFO  发送重新页面需要刷新命令! 
+16:58:31.002 DEBUG 文件处理成功: 
