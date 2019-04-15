@@ -27,7 +27,7 @@
       ]
     },
     created: function (params) {
-      // var vConsole = new VConsole();
+      var vConsole = new VConsole();
       setTimeout(() => {
         let imgWidth = 0
         for (let item of $('.img-list-item')) {

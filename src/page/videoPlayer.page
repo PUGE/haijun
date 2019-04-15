@@ -1,6 +1,6 @@
 <template lang="pug">
 .video-box#videoBox
-  video(src="@&enter.mp4&", muted, id="videoPlay", x5-video-player-type='h5', x5-video-player-fullscreen='true',  x5-video-orientation="landscape")
+  video#videoPlay(src="@&enter.mp4&", muted, preload="auto", autoPlay="true", webkit-playsinline="true", playsinline="true", x5-video-orientation="landscape", x5-video-player-type="h5")
 </template>
 
 <script>
@@ -9,6 +9,8 @@
       // 视频播放器
       const videoPlay = $('#videoPlay')
       const body = $('body')[0]
+      // 播放视频状态下是禁止出现滚动条
+      body.style.overflow = 'hidden'
       // 屏幕信息
       const screenInfo = $tool.getScreenInfo()
       // 视频分辨率比例
@@ -47,33 +49,20 @@
         videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
       }
 
-      // 禁止视频播放的时候滚动
-      videoPlay.addEventListener("touchmove", function (e) {
-        e.preventDefault();
-      })
-
       // 视频播放完毕事件
       videoPlay.addEventListener('ended', function () {
+        // 恢复滚动条
+        body.style['overflow-x'] = 'auto'
         // 视频播放完毕销毁视频
+        $('#videoBox').innerHTML = ''
         $('#videoBox').style.display = 'none'
       }, false)
 
       // 方法
-      function weixinPlay(fn) {
-        if (!window.isWeixin || !window.isWeixin()) {    // 非微信中直接执行，支不支持就交给浏览器本身了
-          fn();
-        } else {
-          if (window.WeixinJSBridge) {
-            WeixinJSBridge.invoke("getNetworkType", {}, fn);   // 这句话是在微信中可以自动播放的核心
-          } else {
-            document.addEventListener("WeixinJSBridgeReady",function () {
-              WeixinJSBridge.invoke("getNetworkType", {}, fn);
-            })
-          }
-        }
-      }
-      // 调用
-      weixinPlay(function() {
+      document.addEventListener('WeixinJSBridgeReady',function () {
+        videoPlay.play();
+      }, false)
+      document.addEventListener('click', function () {
         console.log('播放')
         videoPlay.play()
       })
@@ -90,6 +79,8 @@
     position: fixed;
     text-align: center;
     align-items: center;
+    object-fit: fill;
+    background-color: black;
     video {
       height: 100%;
       margin: auto;
