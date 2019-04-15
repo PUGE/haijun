@@ -1,16 +1,42 @@
 <template lang="pug">
-.main-box
+.main-box#mainBox
   temple(name="videoPlayer", src="./src/page/videoPlayer.page")
-  .img-list
-    img(src="@&test.jpg&")
-    img(src="@&test.jpg&")
-    img(src="@&test.jpg&")
-    img(src="@&test.jpg&")
+  .img-list#imgList
+    img.img-list-item(@for="item in imgList", src="{{item.src}}")
+    .clear
+  temple(name="plane", src="./src/page/plane.page")
+  .clear
 </template>
 
 <script>
   module.exports = {
+    data: {
+      imgList: [
+        {src:"@&1.jpg&"},
+        {src:"@&2.jpg&"},
+        {src:"@&3.jpg&"},
+        {src:"@&4.jpg&"},
+        {src:"@&5.jpg&"},
+        {src:"@&6.jpg&"},
+        {src:"@&7.jpg&"},
+        {src:"@&8.png&"},
+        {src:"@&9.png&"},
+        {src:"@&10.jpg&"},
+        {src:"@&11.png&"},
+        {src:"@&12.png&"},
+      ]
+    },
     created: function (params) {
+      // var vConsole = new VConsole();
+      setTimeout(() => {
+        let imgWidth = 0
+        for (let item of $('.img-list-item')) {
+          console.log(item.width)
+          imgWidth += item.width + 10
+        }
+        $('#imgList').style.width = imgWidth + 1 + 'px'
+        $('#o-home').style.width = imgWidth + $tool.getScreenInfo().clientWidth + 1 +'px'
+      }, 0)
     }
   }
 </script>
@@ -19,19 +45,16 @@
 <style lang="less">
 .photo-box {
   position: relative;
-  
 }
 
 .img-list {
-  display: flex;
-  height: 100%;
+  height: calc(100% - 80px);
   padding: 40px 0;
-  // background: #3a2d25 url('@&jiaopian.svg&') repeat-x;
-  background-color: black;
-  background-size: 100% auto;
   img {
-    height: calc(100% - 80px);
+    height: 100%;
     display: block;
+    margin: 0 5px;
+    float: left;
   }
 }
 </style>

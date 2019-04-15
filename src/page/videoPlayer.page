@@ -1,6 +1,6 @@
 <template lang="pug">
 .video-box#videoBox
-  video(src="@&enter.mp4&", autoplay="true", id="videoPlay")
+  video(src="@&enter.mp4&", muted, id="videoPlay", x5-video-player-type='h5', x5-video-player-fullscreen='true')
 </template>
 
 <script>
@@ -33,27 +33,50 @@
       }
 
       // 判断以高度为基准还是以宽度为基准
-        if (screenInfo.ratio >= 1 && videoRatio > screenInfo.ratio) {
-          const videoWidth = ch * videoRatio
-          videoPlay.style.height = ch + 'px'
-          videoPlay.style.width = videoWidth + 'px'
-          // 将视频1保持在中间
-          videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
-        } else {
-          const videoHeight = cw / videoRatio
-          videoPlay.style.width = cw + 'px'
-          videoPlay.style.height = videoHeight + 'px'
-          // 将视频1保持在中间
-          videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
-        }
+      if (screenInfo.ratio >= 1 && videoRatio > screenInfo.ratio) {
+        const videoWidth = ch * videoRatio
+        videoPlay.style.height = ch + 'px'
+        videoPlay.style.width = videoWidth + 'px'
+        // 将视频1保持在中间
+        videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
+      } else {
+        const videoHeight = cw / videoRatio
+        videoPlay.style.width = cw + 'px'
+        videoPlay.style.height = videoHeight + 'px'
+        // 将视频1保持在中间
+        videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
+      }
 
-
+      // 禁止视频播放的时候滚动
+      videoPlay.addEventListener("touchmove", function (e) {
+        e.preventDefault();
+      })
 
       // 视频播放完毕事件
       videoPlay.addEventListener('ended', function () {
         // 视频播放完毕销毁视频
         $('#videoBox').style.display = 'none'
       }, false)
+
+      // 方法
+      function weixinPlay(fn) {
+        if (!window.isWeixin || !window.isWeixin()) {    // 非微信中直接执行，支不支持就交给浏览器本身了
+          fn();
+        } else {
+          if (window.WeixinJSBridge) {
+            WeixinJSBridge.invoke("getNetworkType", {}, fn);   // 这句话是在微信中可以自动播放的核心
+          } else {
+            document.addEventListener("WeixinJSBridgeReady",function () {
+              WeixinJSBridge.invoke("getNetworkType", {}, fn);
+            })
+          }
+        }
+      }
+      // 调用
+      weixinPlay(function() {
+        console.log('播放')
+        videoPlay.play()
+      })
     }
   }
 </script>

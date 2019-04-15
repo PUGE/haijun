@@ -1,0 +1,58 @@
+<template lang="pug">
+.plane-box#planeBox
+  img.plane#plane(src="@&plane.png&")
+  img.people.people-1(src="@&people.png&", @click="flay")
+  img.people.people-2(src="@&people.png&", @click="flay")
+  img.hand(src="@&hand.png&", @click="flay")
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      // 屏幕信息
+      const screenInfo = $tool.getScreenInfo()
+      $('#planeBox').style.width = screenInfo.clientWidth + 'px'
+      $('#planeBox').style.height = screenInfo.clientHeight + 'px'
+    },
+    flay: function () {
+      $('#plane').style.left = '100%';
+      $('#plane').style.top = '10%';
+    }
+  }
+</script>
+
+
+<style lang="less">
+.plane-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url('@&plane-bg.jpg&');
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.plane {
+  height: 25%;
+  position: absolute;
+  left: 10%;
+  top: 21%;
+  transition: all 2s;
+}
+.people {
+  position: absolute;
+  width: 18%;
+  bottom: 5%;
+}
+.people-1 {
+  left: 25%;
+}
+.people-2 {
+  left: 55%;
+}
+.hand {
+  position: absolute;
+  height: 8%;
+  bottom: 24%;
+  left: 28%;
+}
+</style>

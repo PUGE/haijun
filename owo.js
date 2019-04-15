@@ -29,12 +29,17 @@ module.exports = {
       babel: true,
       // 是否异步加载此脚本,请确保此脚本不会对DOM进行操作
       defer: true
-    }
+    },
+    // {
+    //   name: "vConsole",
+    //   src: "http://cunchu.site/plug/vconsole.min.js"
+    // }
   ],
   // 使用到的样式列表
   styleList: [
     {
       name: "main",
+      resource: true,
       src: "./src/main.css"
     }
   ],
