@@ -1,0 +1,78 @@
+<template lang="pug">
+.video-box#videoBox
+  video(src="@&enter.mp4&", autoplay="true", id="videoPlay")
+</template>
+
+<script>
+  module.exports = {
+    created: function (params) {
+      // 视频播放器
+      const videoPlay = $('#videoPlay')
+      const body = $('body')[0]
+      // 屏幕信息
+      const screenInfo = $tool.getScreenInfo()
+      // 视频分辨率比例
+      const videoRatio = 640 / 368
+      
+      let cw = screenInfo.clientWidth
+      let ch = screenInfo.clientHeight
+
+      console.log(`屏幕分辨率比: ${screenInfo.ratio}`)
+      console.log(`视频分辨率比: ${videoRatio}`)
+      // 判断是横屏还是竖屏
+      if (screenInfo.ratio < 1) {
+        cw = screenInfo.clientHeight
+        ch = screenInfo.clientWidth
+        // 竖屏处理
+        body.style.position = 'absolute'
+        body.style.width = screenInfo.clientHeight + 'px'
+        body.style.height = screenInfo.clientWidth + 'px'
+        body.style.transform = 'translate3d(0, 0, 0) rotate(90deg)'
+        body.style.left = 'calc(50% - ' + screenInfo.clientHeight / 2 + 'px)'
+        body.style.top = 'calc(50% - ' + screenInfo.clientWidth / 2 + 'px)'
+      }
+
+      // 判断以高度为基准还是以宽度为基准
+        if (screenInfo.ratio >= 1 && videoRatio > screenInfo.ratio) {
+          const videoWidth = ch * videoRatio
+          videoPlay.style.height = ch + 'px'
+          videoPlay.style.width = videoWidth + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
+        } else {
+          const videoHeight = cw / videoRatio
+          videoPlay.style.width = cw + 'px'
+          videoPlay.style.height = videoHeight + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
+        }
+
+
+
+      // 视频播放完毕事件
+      videoPlay.addEventListener('ended', function () {
+        // 视频播放完毕销毁视频
+        $('#videoBox').style.display = 'none'
+      }, false)
+    }
+  }
+</script>
+
+
+<style lang="less">
+  .video-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    video {
+      height: 100%;
+      margin: auto;
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+  }
+</style>

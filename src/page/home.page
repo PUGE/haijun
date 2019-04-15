@@ -1,0 +1,37 @@
+<template lang="pug">
+.main-box
+  temple(name="videoPlayer", src="./src/page/videoPlayer.page")
+  .img-list
+    img(src="@&test.jpg&")
+    img(src="@&test.jpg&")
+    img(src="@&test.jpg&")
+    img(src="@&test.jpg&")
+</template>
+
+<script>
+  module.exports = {
+    created: function (params) {
+    }
+  }
+</script>
+
+
+<style lang="less">
+.photo-box {
+  position: relative;
+  
+}
+
+.img-list {
+  display: flex;
+  height: 100%;
+  padding: 40px 0;
+  // background: #3a2d25 url('@&jiaopian.svg&') repeat-x;
+  background-color: black;
+  background-size: 100% auto;
+  img {
+    height: calc(100% - 80px);
+    display: block;
+  }
+}
+</style>

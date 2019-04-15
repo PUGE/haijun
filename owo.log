@@ -1,0 +1,700 @@
+14:25:52.990 DEBUG 获取到配置信息: 
+14:25:52.990 DEBUG {"basePath":"./","watcher":{"enable":true,"ignored":"./dist/*","depth":99},"outPut":{"minifyCss":false,"minifyJs":false,"addVersion":false},"serverPort":8000,"server":true,"autoReload":true,"root":"/src","entry":"home","title":"页面","outFolder":"./dist","resourceFolder":"./src/resource","headList":[{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}],"scriptList":[{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}],"styleList":[{"name":"main","src":"./src/main.css"}],"pageList":[{"main":true,"isPage":true,"name":"home","src":"./src/page/home.page","temple":"<temple name=\"home\" src=\"./src/page/home.page\" isPage=\"true\"></temple>"}],"dev":{"basePath":"./","watcher":{"enable":true,"ignored":"./dist/*","depth":99},"outPut":{"minifyCss":false,"minifyJs":false,"addVersion":false},"serverPort":8000,"server":true,"autoReload":true},"build":{"basePath":"./","outPut":{"minifyCss":true,"minifyJs":true,"addVersion":true}}} 
+14:25:52.991 INFO  --------------------------- 开始编译 --------------------------- 
+14:25:52.991 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:25:52.991 INFO  首次启动! 
+14:25:52.991 INFO  生成版本号: talnehozrf 
+14:25:52.999 INFO  清理资源文件夹: C:\Users\PG\Documents\GitHub\haijun\dist\static 
+14:25:52.999 INFO  文件夹不存在: C:\Users\PG\Documents\GitHub\haijun\dist\static 
+14:25:53.000 INFO  创建文件夹: C:\Users\PG\Documents\GitHub\haijun\dist\static 
+14:25:53.000 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:25:53.000 DEBUG 读取网页标题: 页面 
+14:25:53.000 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:25:53.001 DEBUG 处理模板: ./src/page/home.page 
+14:25:53.597 DEBUG 缓存模板: ./src/page/home.page 
+14:25:53.598 INFO  文件夹不存在: C:\Users\PG\Documents\GitHub\haijun\dist\static\resource 
+14:25:53.598 INFO  创建文件夹: C:\Users\PG\Documents\GitHub\haijun\dist\static\resource 
+14:25:53.599 INFO  读取文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:25:53.612 INFO  工程中只有一个页面! 
+14:25:53.613 DEBUG 页面中不包含切换动画! 
+14:25:54.399 INFO  文件夹不存在: C:\Users\PG\Documents\GitHub\haijun\dist\static\js 
+14:25:54.399 INFO  创建文件夹: C:\Users\PG\Documents\GitHub\haijun\dist\static\js 
+14:25:54.406 INFO  读取文件: C:\Users\PG\Documents\GitHub\PG\core\debug\autoReload.js 
+14:25:54.406 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:25:54.406 DEBUG 外部脚本数量: 1 
+14:25:54.406 DEBUG 处理脚本: gif 
+14:25:54.406 DEBUG 使用bable处理脚本! 
+14:25:54.406 INFO  监控文件夹变化: C:\Users\PG\Documents\GitHub\haijun\src 
+14:25:54.418 INFO  服务器运行在: 127.0.0.1:8000 
+14:25:54.426 DEBUG 文件处理成功: 
+14:25:54.426 DEBUG 文件处理成功: 
+14:25:54.594 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:25:54.594 INFO  文件夹不存在: C:\Users\PG\Documents\GitHub\haijun\dist\static\css 
+14:25:54.594 INFO  创建文件夹: C:\Users\PG\Documents\GitHub\haijun\dist\static\css 
+14:25:54.594 INFO  读取文件: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:25:54.595 DEBUG 判断是否可以输出Html! 
+14:25:54.595 DEBUG 还有没有经过处理的资源! 
+14:25:54.614 INFO  读取成功: C:\Users\PG\Documents\GitHub\PG\core\debug\autoReload.js 
+14:25:54.614 INFO  读取成功: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:25:54.629 INFO  读取成功: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:25:54.632 INFO  写入文件: C:\Users\PG\Documents\GitHub\haijun\dist\static\css\main.css 
+14:25:54.632 INFO  使用babel处理并生成文件: C:\Users\PG\Documents\GitHub\haijun\dist\static\js\gif.js 
+14:25:54.632 DEBUG 判断是否可以输出Html! 
+14:25:54.632 DEBUG 准备输出html! 
+14:25:54.633 DEBUG 开始美化html 
+14:25:54.651 INFO  发送重新页面需要刷新命令! 
+14:25:54.652 INFO  写入文件: C:\Users\PG\Documents\GitHub\haijun\dist\static\resource\jiaopian.svg 
+14:25:54.652 INFO  写入文件: C:\Users\PG\Documents\GitHub\haijun\dist\static\js\autoReload.js 
+14:25:54.746 DEBUG 文件处理成功: 
+14:25:54.746 DEBUG C:\Users\PG\Documents\GitHub\haijun\dist\static\resource\test.jpg 
+14:26:27.807 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:26:27.807 INFO  --------------------------- 开始编译 --------------------------- 
+14:26:27.807 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:26:27.807 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:26:27.807 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:26:27.807 DEBUG 读取网页标题: 页面 
+14:26:27.807 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:26:27.807 DEBUG 处理模板: ./src/page/home.page 
+14:26:27.822 DEBUG 缓存模板: ./src/page/home.page 
+14:26:27.822 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:26:27.823 INFO  工程中只有一个页面! 
+14:26:27.824 DEBUG 页面中不包含切换动画! 
+14:26:27.922 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:26:27.922 DEBUG 外部脚本数量: 1 
+14:26:27.922 DEBUG 处理脚本: gif 
+14:26:27.922 DEBUG 使用bable处理脚本! 
+14:26:27.922 DEBUG 判断是否可以输出Html! 
+14:26:27.922 DEBUG 还有没有经过处理的资源! 
+14:26:27.923 DEBUG 文件处理成功: 
+14:26:27.923 DEBUG 文件处理成功: 
+14:26:28.038 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:26:28.038 DEBUG 判断是否可以输出Html! 
+14:26:28.038 DEBUG 准备输出html! 
+14:26:28.039 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:26:28.039 DEBUG 开始美化html 
+14:26:28.047 INFO  发送重新页面需要刷新命令! 
+14:26:28.047 DEBUG 文件处理成功: 
+14:30:31.692 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:30:31.692 INFO  --------------------------- 开始编译 --------------------------- 
+14:30:31.692 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:30:31.692 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:30:31.692 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:30:31.693 DEBUG 读取网页标题: 页面 
+14:30:31.693 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:30:31.693 DEBUG 处理模板: ./src/page/home.page 
+14:30:31.701 DEBUG 缓存模板: ./src/page/home.page 
+14:30:31.701 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:30:31.703 INFO  工程中只有一个页面! 
+14:30:31.703 DEBUG 页面中不包含切换动画! 
+14:30:31.754 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:30:31.754 DEBUG 外部脚本数量: 1 
+14:30:31.754 DEBUG 处理脚本: gif 
+14:30:31.754 DEBUG 使用bable处理脚本! 
+14:30:31.754 DEBUG 判断是否可以输出Html! 
+14:30:31.754 DEBUG 还有没有经过处理的资源! 
+14:30:31.755 DEBUG 文件处理成功: 
+14:30:31.755 DEBUG 文件处理成功: 
+14:30:31.877 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:30:31.877 DEBUG 判断是否可以输出Html! 
+14:30:31.877 DEBUG 准备输出html! 
+14:30:31.877 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:30:31.877 DEBUG 开始美化html 
+14:30:31.883 INFO  发送重新页面需要刷新命令! 
+14:30:31.883 DEBUG 文件处理成功: 
+14:31:17.950 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:31:17.950 INFO  --------------------------- 开始编译 --------------------------- 
+14:31:17.950 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:31:17.950 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:31:17.950 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:31:17.951 DEBUG 读取网页标题: 页面 
+14:31:17.951 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:31:17.951 DEBUG 处理模板: ./src/page/home.page 
+14:31:17.962 DEBUG 缓存模板: ./src/page/home.page 
+14:31:17.962 INFO  读取文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiao.svg 
+14:31:17.963 INFO  工程中只有一个页面! 
+14:31:17.963 DEBUG 页面中不包含切换动画! 
+14:31:18.015 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:31:18.015 DEBUG 外部脚本数量: 1 
+14:31:18.015 DEBUG 处理脚本: gif 
+14:31:18.015 DEBUG 使用bable处理脚本! 
+14:31:18.015 DEBUG 判断是否可以输出Html! 
+14:31:18.015 DEBUG 还有没有经过处理的资源! 
+14:31:18.016 DEBUG 文件处理成功: 
+14:31:18.016 DEBUG 文件处理成功: 
+14:31:18.120 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:31:18.120 DEBUG 判断是否可以输出Html! 
+14:31:18.120 DEBUG 准备输出html! 
+14:31:18.121 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:31:18.121 DEBUG 开始美化html 
+14:31:18.129 INFO  发送重新页面需要刷新命令! 
+14:31:18.129 DEBUG 文件处理成功: 
+14:31:18.130 INFO  读取成功: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiao.svg 
+14:31:18.131 INFO  写入文件: C:\Users\PG\Documents\GitHub\haijun\dist\static\resource\jiao.svg 
+14:35:12.671 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:35:12.671 INFO  --------------------------- 开始编译 --------------------------- 
+14:35:12.671 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:35:12.671 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:35:12.671 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:35:12.671 DEBUG 读取网页标题: 页面 
+14:35:12.671 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:35:12.671 DEBUG 处理模板: ./src/page/home.page 
+14:35:12.681 DEBUG 缓存模板: ./src/page/home.page 
+14:35:12.681 ERROR 找不到资源文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:35:12.682 INFO  工程中只有一个页面! 
+14:35:12.682 DEBUG 页面中不包含切换动画! 
+14:35:12.726 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:35:12.726 DEBUG 外部脚本数量: 1 
+14:35:12.726 DEBUG 处理脚本: gif 
+14:35:12.726 DEBUG 使用bable处理脚本! 
+14:35:12.726 DEBUG 判断是否可以输出Html! 
+14:35:12.726 DEBUG 还有没有经过处理的资源! 
+14:35:12.727 DEBUG 文件处理成功: 
+14:35:12.727 DEBUG 文件处理成功: 
+14:35:12.833 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:35:12.833 DEBUG 判断是否可以输出Html! 
+14:35:12.833 DEBUG 准备输出html! 
+14:35:12.834 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:35:12.834 DEBUG 开始美化html 
+14:35:12.839 INFO  发送重新页面需要刷新命令! 
+14:35:12.839 DEBUG 文件处理成功: 
+14:39:58.049 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:39:58.049 INFO  --------------------------- 开始编译 --------------------------- 
+14:39:58.049 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:39:58.049 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:39:58.049 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:39:58.050 DEBUG 读取网页标题: 页面 
+14:39:58.050 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:39:58.050 DEBUG 处理模板: ./src/page/home.page 
+14:39:58.071 DEBUG 缓存模板: ./src/page/home.page 
+14:39:58.072 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:39:58.073 INFO  工程中只有一个页面! 
+14:39:58.073 DEBUG 页面中不包含切换动画! 
+14:39:58.148 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:39:58.148 DEBUG 外部脚本数量: 1 
+14:39:58.148 DEBUG 处理脚本: gif 
+14:39:58.148 DEBUG 使用bable处理脚本! 
+14:39:58.148 DEBUG 判断是否可以输出Html! 
+14:39:58.148 DEBUG 还有没有经过处理的资源! 
+14:39:58.149 DEBUG 文件处理成功: 
+14:39:58.149 DEBUG 文件处理成功: 
+14:39:58.262 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:39:58.262 DEBUG 判断是否可以输出Html! 
+14:39:58.262 DEBUG 准备输出html! 
+14:39:58.262 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:39:58.262 DEBUG 开始美化html 
+14:39:58.268 INFO  发送重新页面需要刷新命令! 
+14:39:58.269 DEBUG 文件处理成功: 
+14:40:33.395 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:40:33.395 INFO  --------------------------- 开始编译 --------------------------- 
+14:40:33.395 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:40:33.395 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:40:33.395 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:40:33.395 DEBUG 读取网页标题: 页面 
+14:40:33.395 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:40:33.395 DEBUG 处理模板: ./src/page/home.page 
+14:40:33.406 DEBUG 缓存模板: ./src/page/home.page 
+14:40:33.406 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:40:33.407 INFO  工程中只有一个页面! 
+14:40:33.407 DEBUG 页面中不包含切换动画! 
+14:40:33.451 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:40:33.451 DEBUG 外部脚本数量: 1 
+14:40:33.451 DEBUG 处理脚本: gif 
+14:40:33.451 DEBUG 使用bable处理脚本! 
+14:40:33.451 DEBUG 判断是否可以输出Html! 
+14:40:33.451 DEBUG 还有没有经过处理的资源! 
+14:40:33.452 DEBUG 文件处理成功: 
+14:40:33.452 DEBUG 文件处理成功: 
+14:40:33.558 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:40:33.558 DEBUG 判断是否可以输出Html! 
+14:40:33.558 DEBUG 准备输出html! 
+14:40:33.558 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:40:33.558 DEBUG 开始美化html 
+14:40:33.562 INFO  发送重新页面需要刷新命令! 
+14:40:33.562 DEBUG 文件处理成功: 
+14:44:11.182 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:44:11.182 INFO  --------------------------- 开始编译 --------------------------- 
+14:44:11.182 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:44:11.182 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:44:11.182 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:44:11.183 DEBUG 读取网页标题: 页面 
+14:44:11.183 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:44:11.183 DEBUG 处理模板: ./src/page/home.page 
+14:44:11.198 DEBUG 缓存模板: ./src/page/home.page 
+14:44:11.199 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:44:11.200 INFO  工程中只有一个页面! 
+14:44:11.200 DEBUG 页面中不包含切换动画! 
+14:44:11.248 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:44:11.248 DEBUG 外部脚本数量: 1 
+14:44:11.248 DEBUG 处理脚本: gif 
+14:44:11.248 DEBUG 使用bable处理脚本! 
+14:44:11.248 DEBUG 判断是否可以输出Html! 
+14:44:11.248 DEBUG 还有没有经过处理的资源! 
+14:44:11.249 DEBUG 文件处理成功: 
+14:44:11.249 DEBUG 文件处理成功: 
+14:44:11.358 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:44:11.358 DEBUG 判断是否可以输出Html! 
+14:44:11.358 DEBUG 准备输出html! 
+14:44:11.358 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:44:11.358 DEBUG 开始美化html 
+14:44:11.362 INFO  发送重新页面需要刷新命令! 
+14:44:11.362 DEBUG 文件处理成功: 
+14:47:10.292 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:47:10.292 INFO  --------------------------- 开始编译 --------------------------- 
+14:47:10.292 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:47:10.292 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:47:10.292 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:47:10.293 DEBUG 读取网页标题: 页面 
+14:47:10.293 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:47:10.293 DEBUG 处理模板: ./src/page/home.page 
+14:47:10.299 DEBUG 缓存模板: ./src/page/home.page 
+14:47:10.300 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:47:10.301 INFO  工程中只有一个页面! 
+14:47:10.302 DEBUG 页面中不包含切换动画! 
+14:47:10.345 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:47:10.345 DEBUG 外部脚本数量: 1 
+14:47:10.345 DEBUG 处理脚本: gif 
+14:47:10.345 DEBUG 使用bable处理脚本! 
+14:47:10.345 DEBUG 判断是否可以输出Html! 
+14:47:10.345 DEBUG 还有没有经过处理的资源! 
+14:47:10.346 DEBUG 文件处理成功: 
+14:47:10.346 DEBUG 文件处理成功: 
+14:47:10.455 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:47:10.455 INFO  读取文件: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:47:10.455 DEBUG 判断是否可以输出Html! 
+14:47:10.455 DEBUG 准备输出html! 
+14:47:10.455 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:47:10.455 DEBUG 开始美化html 
+14:47:10.459 INFO  发送重新页面需要刷新命令! 
+14:47:10.459 DEBUG 文件处理成功: 
+14:47:10.504 INFO  读取成功: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:47:10.509 INFO  写入文件: C:\Users\PG\Documents\GitHub\haijun\dist\static\css\main.css 
+14:48:08.677 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:48:08.677 INFO  --------------------------- 开始编译 --------------------------- 
+14:48:08.677 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:48:08.677 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:48:08.677 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:48:08.677 DEBUG 读取网页标题: 页面 
+14:48:08.677 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:48:08.677 DEBUG 处理模板: ./src/page/home.page 
+14:48:08.691 DEBUG 缓存模板: ./src/page/home.page 
+14:48:08.691 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:48:08.693 INFO  工程中只有一个页面! 
+14:48:08.694 DEBUG 页面中不包含切换动画! 
+14:48:08.729 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:48:08.729 DEBUG 外部脚本数量: 1 
+14:48:08.729 DEBUG 处理脚本: gif 
+14:48:08.729 DEBUG 使用bable处理脚本! 
+14:48:08.729 DEBUG 判断是否可以输出Html! 
+14:48:08.729 DEBUG 还有没有经过处理的资源! 
+14:48:08.730 DEBUG 文件处理成功: 
+14:48:08.730 DEBUG 文件处理成功: 
+14:48:08.836 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:48:08.837 DEBUG 判断是否可以输出Html! 
+14:48:08.837 DEBUG 准备输出html! 
+14:48:08.837 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:08.837 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:08.837 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:08.837 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:08.837 DEBUG 开始美化html 
+14:48:08.845 INFO  发送重新页面需要刷新命令! 
+14:48:08.845 DEBUG 文件处理成功: 
+14:48:44.956 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:48:44.956 INFO  --------------------------- 开始编译 --------------------------- 
+14:48:44.956 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:48:44.956 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:48:44.956 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:48:44.957 DEBUG 读取网页标题: 页面 
+14:48:44.957 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:48:44.957 DEBUG 处理模板: ./src/page/home.page 
+14:48:44.973 DEBUG 缓存模板: ./src/page/home.page 
+14:48:44.973 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:48:44.974 INFO  工程中只有一个页面! 
+14:48:44.974 DEBUG 页面中不包含切换动画! 
+14:48:45.050 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:48:45.050 DEBUG 外部脚本数量: 1 
+14:48:45.050 DEBUG 处理脚本: gif 
+14:48:45.050 DEBUG 使用bable处理脚本! 
+14:48:45.050 DEBUG 判断是否可以输出Html! 
+14:48:45.050 DEBUG 还有没有经过处理的资源! 
+14:48:45.051 DEBUG 文件处理成功: 
+14:48:45.051 DEBUG 文件处理成功: 
+14:48:45.165 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:48:45.165 DEBUG 判断是否可以输出Html! 
+14:48:45.165 DEBUG 准备输出html! 
+14:48:45.165 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:45.165 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:45.165 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:45.165 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:45.165 DEBUG 开始美化html 
+14:48:45.171 INFO  发送重新页面需要刷新命令! 
+14:48:45.172 DEBUG 文件处理成功: 
+14:48:57.315 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:48:57.315 INFO  --------------------------- 开始编译 --------------------------- 
+14:48:57.315 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:48:57.315 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:48:57.315 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:48:57.316 DEBUG 读取网页标题: 页面 
+14:48:57.316 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:48:57.316 DEBUG 处理模板: ./src/page/home.page 
+14:48:57.328 DEBUG 缓存模板: ./src/page/home.page 
+14:48:57.328 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:48:57.330 INFO  工程中只有一个页面! 
+14:48:57.330 DEBUG 页面中不包含切换动画! 
+14:48:57.367 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:48:57.367 DEBUG 外部脚本数量: 1 
+14:48:57.367 DEBUG 处理脚本: gif 
+14:48:57.367 DEBUG 使用bable处理脚本! 
+14:48:57.367 DEBUG 判断是否可以输出Html! 
+14:48:57.367 DEBUG 还有没有经过处理的资源! 
+14:48:57.368 DEBUG 文件处理成功: 
+14:48:57.368 DEBUG 文件处理成功: 
+14:48:57.476 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:48:57.477 DEBUG 判断是否可以输出Html! 
+14:48:57.477 DEBUG 准备输出html! 
+14:48:57.477 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:57.477 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:57.477 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:57.477 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:48:57.477 DEBUG 开始美化html 
+14:48:57.481 INFO  发送重新页面需要刷新命令! 
+14:48:57.481 DEBUG 文件处理成功: 
+14:49:33.190 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:49:33.190 INFO  --------------------------- 开始编译 --------------------------- 
+14:49:33.190 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:49:33.190 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:49:33.190 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:49:33.191 DEBUG 读取网页标题: 页面 
+14:49:33.191 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:49:33.191 DEBUG 处理模板: ./src/page/home.page 
+14:49:33.206 DEBUG 缓存模板: ./src/page/home.page 
+14:49:33.207 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:49:33.208 INFO  工程中只有一个页面! 
+14:49:33.208 DEBUG 页面中不包含切换动画! 
+14:49:33.252 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:49:33.252 DEBUG 外部脚本数量: 1 
+14:49:33.252 DEBUG 处理脚本: gif 
+14:49:33.252 DEBUG 使用bable处理脚本! 
+14:49:33.252 DEBUG 判断是否可以输出Html! 
+14:49:33.252 DEBUG 还有没有经过处理的资源! 
+14:49:33.255 DEBUG 文件处理成功: 
+14:49:33.255 DEBUG 文件处理成功: 
+14:49:33.362 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:49:33.363 DEBUG 判断是否可以输出Html! 
+14:49:33.363 DEBUG 准备输出html! 
+14:49:33.363 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:49:33.363 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:49:33.363 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:49:33.363 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:49:33.363 DEBUG 开始美化html 
+14:49:33.366 INFO  发送重新页面需要刷新命令! 
+14:49:33.367 DEBUG 文件处理成功: 
+14:49:59.946 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:49:59.946 INFO  --------------------------- 开始编译 --------------------------- 
+14:49:59.946 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:49:59.946 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:49:59.946 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:49:59.947 DEBUG 读取网页标题: 页面 
+14:49:59.947 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:49:59.947 DEBUG 处理模板: ./src/page/home.page 
+14:49:59.964 DEBUG 缓存模板: ./src/page/home.page 
+14:49:59.965 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:49:59.966 INFO  工程中只有一个页面! 
+14:49:59.966 DEBUG 页面中不包含切换动画! 
+14:50:00.016 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:50:00.016 DEBUG 外部脚本数量: 1 
+14:50:00.016 DEBUG 处理脚本: gif 
+14:50:00.016 DEBUG 使用bable处理脚本! 
+14:50:00.016 DEBUG 判断是否可以输出Html! 
+14:50:00.016 DEBUG 还有没有经过处理的资源! 
+14:50:00.017 DEBUG 文件处理成功: 
+14:50:00.017 DEBUG 文件处理成功: 
+14:50:00.127 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:50:00.127 DEBUG 判断是否可以输出Html! 
+14:50:00.127 DEBUG 准备输出html! 
+14:50:00.127 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:50:00.127 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:50:00.127 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:50:00.128 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:50:00.128 DEBUG 开始美化html 
+14:50:00.131 INFO  发送重新页面需要刷新命令! 
+14:50:00.131 DEBUG 文件处理成功: 
+14:50:31.019 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:50:31.019 INFO  --------------------------- 开始编译 --------------------------- 
+14:50:31.019 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:50:31.019 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:50:31.019 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:50:31.020 DEBUG 读取网页标题: 页面 
+14:50:31.020 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:50:31.020 DEBUG 处理模板: ./src/page/home.page 
+14:50:31.032 DEBUG 缓存模板: ./src/page/home.page 
+14:50:31.033 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:50:31.034 INFO  工程中只有一个页面! 
+14:50:31.034 DEBUG 页面中不包含切换动画! 
+14:50:31.071 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:50:31.072 DEBUG 外部脚本数量: 1 
+14:50:31.072 DEBUG 处理脚本: gif 
+14:50:31.072 DEBUG 使用bable处理脚本! 
+14:50:31.072 DEBUG 判断是否可以输出Html! 
+14:50:31.072 DEBUG 还有没有经过处理的资源! 
+14:50:31.072 DEBUG 文件处理成功: 
+14:50:31.072 DEBUG 文件处理成功: 
+14:50:31.179 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:50:31.179 DEBUG 判断是否可以输出Html! 
+14:50:31.179 DEBUG 准备输出html! 
+14:50:31.179 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:50:31.179 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:50:31.179 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:50:31.179 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:50:31.179 DEBUG 开始美化html 
+14:50:31.184 INFO  发送重新页面需要刷新命令! 
+14:50:31.184 DEBUG 文件处理成功: 
+14:55:01.809 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:55:01.809 INFO  --------------------------- 开始编译 --------------------------- 
+14:55:01.809 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:55:01.809 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:55:01.809 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:55:01.809 DEBUG 读取网页标题: 页面 
+14:55:01.809 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:55:01.809 DEBUG 处理模板: ./src/page/home.page 
+14:55:01.821 DEBUG 缓存模板: ./src/page/home.page 
+14:55:01.821 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\jiaopian.svg 
+14:55:01.822 INFO  工程中只有一个页面! 
+14:55:01.822 DEBUG 页面中不包含切换动画! 
+14:55:01.916 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:55:01.916 DEBUG 外部脚本数量: 1 
+14:55:01.916 DEBUG 处理脚本: gif 
+14:55:01.916 DEBUG 使用bable处理脚本! 
+14:55:01.916 DEBUG 判断是否可以输出Html! 
+14:55:01.916 DEBUG 还有没有经过处理的资源! 
+14:55:01.917 DEBUG 文件处理成功: 
+14:55:01.917 DEBUG 文件处理成功: 
+14:55:02.025 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:55:02.025 INFO  读取文件: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:55:02.026 DEBUG 判断是否可以输出Html! 
+14:55:02.026 DEBUG 准备输出html! 
+14:55:02.026 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:55:02.026 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:55:02.026 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:55:02.026 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:55:02.026 DEBUG 开始美化html 
+14:55:02.033 INFO  发送重新页面需要刷新命令! 
+14:55:02.033 DEBUG 文件处理成功: 
+14:55:02.036 INFO  读取成功: C:\Users\PG\Documents\GitHub\haijun\src\main.css 
+14:55:02.039 INFO  写入文件: C:\Users\PG\Documents\GitHub\haijun\dist\static\css\main.css 
+14:57:29.485 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:57:29.485 INFO  --------------------------- 开始编译 --------------------------- 
+14:57:29.485 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:57:29.485 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:57:29.485 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:57:29.486 DEBUG 读取网页标题: 页面 
+14:57:29.486 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:57:29.486 DEBUG 处理模板: ./src/page/home.page 
+14:57:29.501 DEBUG 缓存模板: ./src/page/home.page 
+14:57:29.502 INFO  工程中只有一个页面! 
+14:57:29.502 DEBUG 页面中不包含切换动画! 
+14:57:29.554 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:57:29.554 DEBUG 外部脚本数量: 1 
+14:57:29.554 DEBUG 处理脚本: gif 
+14:57:29.554 DEBUG 使用bable处理脚本! 
+14:57:29.554 DEBUG 判断是否可以输出Html! 
+14:57:29.554 DEBUG 还有没有经过处理的资源! 
+14:57:29.555 DEBUG 文件处理成功: 
+14:57:29.555 DEBUG 文件处理成功: 
+14:57:29.661 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:57:29.661 DEBUG 判断是否可以输出Html! 
+14:57:29.662 DEBUG 准备输出html! 
+14:57:29.662 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:57:29.662 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:57:29.662 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:57:29.662 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:57:29.662 DEBUG 开始美化html 
+14:57:29.667 INFO  发送重新页面需要刷新命令! 
+14:57:29.667 DEBUG 文件处理成功: 
+14:58:45.026 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:58:45.026 INFO  --------------------------- 开始编译 --------------------------- 
+14:58:45.026 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:58:45.026 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:58:45.026 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:58:45.026 DEBUG 读取网页标题: 页面 
+14:58:45.026 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:58:45.026 DEBUG 处理模板: ./src/page/home.page 
+14:58:45.046 DEBUG 缓存模板: ./src/page/home.page 
+14:58:45.048 INFO  工程中只有一个页面! 
+14:58:45.048 DEBUG 页面中不包含切换动画! 
+14:58:45.112 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:58:45.112 DEBUG 外部脚本数量: 1 
+14:58:45.112 DEBUG 处理脚本: gif 
+14:58:45.112 DEBUG 使用bable处理脚本! 
+14:58:45.112 DEBUG 判断是否可以输出Html! 
+14:58:45.112 DEBUG 还有没有经过处理的资源! 
+14:58:45.113 DEBUG 文件处理成功: 
+14:58:45.113 DEBUG 文件处理成功: 
+14:58:45.216 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:58:45.216 DEBUG 判断是否可以输出Html! 
+14:58:45.217 DEBUG 准备输出html! 
+14:58:45.217 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:58:45.217 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:58:45.217 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:58:45.217 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:58:45.217 DEBUG 开始美化html 
+14:58:45.225 INFO  发送重新页面需要刷新命令! 
+14:58:45.225 DEBUG 文件处理成功: 
+14:59:24.948 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:59:24.948 INFO  --------------------------- 开始编译 --------------------------- 
+14:59:24.948 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:59:24.948 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:59:24.948 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:59:24.948 DEBUG 读取网页标题: 页面 
+14:59:24.948 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:59:24.948 DEBUG 处理模板: ./src/page/home.page 
+14:59:24.957 DEBUG 缓存模板: ./src/page/home.page 
+14:59:24.958 INFO  工程中只有一个页面! 
+14:59:24.958 DEBUG 页面中不包含切换动画! 
+14:59:25.009 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:59:25.009 DEBUG 外部脚本数量: 1 
+14:59:25.009 DEBUG 处理脚本: gif 
+14:59:25.009 DEBUG 使用bable处理脚本! 
+14:59:25.009 DEBUG 判断是否可以输出Html! 
+14:59:25.009 DEBUG 还有没有经过处理的资源! 
+14:59:25.010 DEBUG 文件处理成功: 
+14:59:25.010 DEBUG 文件处理成功: 
+14:59:25.132 DEBUG 需要经过特殊处理的css: [[".o-home .main-box ",".o-home "]] 
+14:59:25.132 DEBUG 判断是否可以输出Html! 
+14:59:25.132 DEBUG 准备输出html! 
+14:59:25.133 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:59:25.133 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:59:25.133 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:59:25.133 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:59:25.133 DEBUG 开始美化html 
+14:59:25.139 INFO  发送重新页面需要刷新命令! 
+14:59:25.139 DEBUG 文件处理成功: 
+14:59:27.465 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:59:27.465 INFO  --------------------------- 开始编译 --------------------------- 
+14:59:27.465 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+14:59:27.465 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\home.page 
+14:59:27.465 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+14:59:27.465 DEBUG 读取网页标题: 页面 
+14:59:27.465 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+14:59:27.465 DEBUG 处理模板: ./src/page/home.page 
+14:59:27.479 DEBUG 处理模板: ./src/page/videoPlayer.page 
+14:59:27.484 DEBUG 缓存模板: ./src/page/videoPlayer.page 
+14:59:27.489 DEBUG 缓存模板: ./src/page/home.page 
+14:59:27.491 INFO  工程中只有一个页面! 
+14:59:27.491 DEBUG 页面中不包含切换动画! 
+14:59:27.576 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+14:59:27.576 DEBUG 外部脚本数量: 1 
+14:59:27.576 DEBUG 处理脚本: gif 
+14:59:27.576 DEBUG 使用bable处理脚本! 
+14:59:27.576 DEBUG 判断是否可以输出Html! 
+14:59:27.576 DEBUG 还有没有经过处理的资源! 
+14:59:27.577 DEBUG 文件处理成功: 
+14:59:27.577 DEBUG 文件处理成功: 
+14:59:27.688 DEBUG 需要经过特殊处理的css: [[".o-videoPlayer .video-box ",".o-videoPlayer "],[".o-home .main-box ",".o-home "]] 
+14:59:27.688 DEBUG 判断是否可以输出Html! 
+14:59:27.688 DEBUG 准备输出html! 
+14:59:27.688 INFO  读取文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\enter.mp4 
+14:59:27.689 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:59:27.689 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:59:27.689 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:59:27.689 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+14:59:27.689 DEBUG 开始美化html 
+14:59:27.698 INFO  发送重新页面需要刷新命令! 
+14:59:27.699 DEBUG 文件处理成功: 
+14:59:27.706 INFO  读取成功: C:\Users\PG\Documents\GitHub\haijun\src\resource\enter.mp4 
+14:59:27.728 INFO  写入文件: C:\Users\PG\Documents\GitHub\haijun\dist\static\resource\enter.mp4 
+15:02:08.662 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\videoPlayer.page 
+15:02:08.662 INFO  --------------------------- 开始编译 --------------------------- 
+15:02:08.662 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+15:02:08.662 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\videoPlayer.page 
+15:02:08.662 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+15:02:08.663 DEBUG 读取网页标题: 页面 
+15:02:08.663 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+15:02:08.663 DEBUG 处理模板: ./src/page/home.page 
+15:02:08.670 DEBUG 处理模板: ./src/page/videoPlayer.page 
+15:02:08.676 DEBUG 缓存模板: ./src/page/videoPlayer.page 
+15:02:08.678 DEBUG 缓存模板: ./src/page/home.page 
+15:02:08.679 INFO  工程中只有一个页面! 
+15:02:08.679 DEBUG 页面中不包含切换动画! 
+15:02:08.745 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+15:02:08.745 DEBUG 外部脚本数量: 1 
+15:02:08.745 DEBUG 处理脚本: gif 
+15:02:08.745 DEBUG 使用bable处理脚本! 
+15:02:08.745 DEBUG 判断是否可以输出Html! 
+15:02:08.745 DEBUG 还有没有经过处理的资源! 
+15:02:08.746 DEBUG 文件处理成功: 
+15:02:08.746 DEBUG 文件处理成功: 
+15:02:08.850 DEBUG 需要经过特殊处理的css: [[".o-videoPlayer .video-box ",".o-videoPlayer "],[".o-home .main-box ",".o-home "]] 
+15:02:08.850 DEBUG 判断是否可以输出Html! 
+15:02:08.850 DEBUG 准备输出html! 
+15:02:08.850 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\enter.mp4 
+15:02:08.850 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:02:08.850 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:02:08.850 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:02:08.850 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:02:08.850 DEBUG 开始美化html 
+15:02:08.858 INFO  发送重新页面需要刷新命令! 
+15:02:08.858 DEBUG 文件处理成功: 
+15:03:05.722 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\videoPlayer.page 
+15:03:05.722 INFO  --------------------------- 开始编译 --------------------------- 
+15:03:05.722 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+15:03:05.722 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\videoPlayer.page 
+15:03:05.722 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+15:03:05.722 DEBUG 读取网页标题: 页面 
+15:03:05.722 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+15:03:05.722 DEBUG 处理模板: ./src/page/home.page 
+15:03:05.727 DEBUG 处理模板: ./src/page/videoPlayer.page 
+15:03:05.737 DEBUG 缓存模板: ./src/page/videoPlayer.page 
+15:03:05.739 DEBUG 缓存模板: ./src/page/home.page 
+15:03:05.740 INFO  工程中只有一个页面! 
+15:03:05.740 DEBUG 页面中不包含切换动画! 
+15:03:05.797 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+15:03:05.797 DEBUG 外部脚本数量: 1 
+15:03:05.797 DEBUG 处理脚本: gif 
+15:03:05.797 DEBUG 使用bable处理脚本! 
+15:03:05.797 DEBUG 判断是否可以输出Html! 
+15:03:05.797 DEBUG 还有没有经过处理的资源! 
+15:03:05.798 DEBUG 文件处理成功: 
+15:03:05.798 DEBUG 文件处理成功: 
+15:03:05.902 DEBUG 需要经过特殊处理的css: [[".o-videoPlayer .video-box ",".o-videoPlayer "],[".o-home .main-box ",".o-home "]] 
+15:03:05.902 DEBUG 判断是否可以输出Html! 
+15:03:05.902 DEBUG 准备输出html! 
+15:03:05.903 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\enter.mp4 
+15:03:05.903 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:03:05.903 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:03:05.903 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:03:05.903 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:03:05.903 DEBUG 开始美化html 
+15:03:05.910 INFO  发送重新页面需要刷新命令! 
+15:03:05.910 DEBUG 文件处理成功: 
+15:03:15.889 INFO  file change: C:\Users\PG\Documents\GitHub\haijun\src\page\videoPlayer.page 
+15:03:15.889 INFO  --------------------------- 开始编译 --------------------------- 
+15:03:15.889 INFO  程序运行目录: C:\Users\PG\Documents\GitHub\haijun 
+15:03:15.889 INFO  刷新模式,变化目录: C:\Users\PG\Documents\GitHub\haijun\src\page\videoPlayer.page 
+15:03:15.889 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\index.html 
+15:03:15.889 DEBUG 读取网页标题: 页面 
+15:03:15.889 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}] 
+15:03:15.890 DEBUG 处理模板: ./src/page/home.page 
+15:03:15.898 DEBUG 处理模板: ./src/page/videoPlayer.page 
+15:03:15.915 DEBUG 缓存模板: ./src/page/videoPlayer.page 
+15:03:15.917 DEBUG 缓存模板: ./src/page/home.page 
+15:03:15.918 INFO  工程中只有一个页面! 
+15:03:15.919 DEBUG 页面中不包含切换动画! 
+15:03:15.967 DEBUG 处理引用脚本: [{"name":"gif","src":"./src/script/log.js","babel":true,"defer":true}] 
+15:03:15.967 DEBUG 外部脚本数量: 1 
+15:03:15.967 DEBUG 处理脚本: gif 
+15:03:15.967 DEBUG 使用bable处理脚本! 
+15:03:15.967 DEBUG 判断是否可以输出Html! 
+15:03:15.967 DEBUG 还有没有经过处理的资源! 
+15:03:15.968 DEBUG 文件处理成功: 
+15:03:15.968 DEBUG 文件处理成功: 
+15:03:16.074 DEBUG 需要经过特殊处理的css: [[".o-videoPlayer .video-box ",".o-videoPlayer "],[".o-home .main-box ",".o-home "]] 
+15:03:16.074 DEBUG 判断是否可以输出Html! 
+15:03:16.074 DEBUG 准备输出html! 
+15:03:16.074 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\enter.mp4 
+15:03:16.074 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:03:16.074 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:03:16.074 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:03:16.075 DEBUG 忽略文件: C:\Users\PG\Documents\GitHub\haijun\src\resource\test.jpg 
+15:03:16.075 DEBUG 开始美化html 
+15:03:16.088 INFO  发送重新页面需要刷新命令! 
+15:03:16.088 DEBUG 文件处理成功: 
