@@ -1,6 +1,16 @@
 <template lang="pug">
 .video-box#videoBox
-  video#videoPlay(src="@&enter.mp4&", muted, preload="auto", autoPlay="true", webkit-playsinline="true", playsinline="true", x5-video-orientation="landscape", x5-video-player-type="h5")
+  video#videoPlay(
+    src="@&enter.mp4&",
+    muted,
+    preload="auto",
+    autoPlay="true",
+    webkit-playsinline="true",
+    playsinline="true",
+    x5-video-player-type="h5",
+    x5-video-player-fullscreen="false",
+    ontouchstart="return false;"
+  )
 </template>
 
 <script>
@@ -9,8 +19,6 @@
       // 视频播放器
       const videoPlay = $('#videoPlay')
       const body = $('body')[0]
-      // 播放视频状态下是禁止出现滚动条
-      body.style.overflow = 'hidden'
       // 屏幕信息
       const screenInfo = $tool.getScreenInfo()
       // 视频分辨率比例
@@ -51,8 +59,6 @@
 
       // 视频播放完毕事件
       videoPlay.addEventListener('ended', function () {
-        // 恢复滚动条
-        body.style['overflow-x'] = 'auto'
         // 视频播放完毕销毁视频
         $('#videoBox').innerHTML = ''
         $('#videoBox').style.display = 'none'

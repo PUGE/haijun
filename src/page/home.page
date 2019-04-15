@@ -2,7 +2,7 @@
 .main-box#mainBox
   temple(name="videoPlayer", src="./src/page/videoPlayer.page")
   .img-list#imgList
-    img.img-list-item(@for="item in imgList", src="{{item.src}}")
+    img.img-list-item(@for="item in imgList", src="{{item.src}}", ondragstart="return false;")
     .clear
   temple(name="plane", src="./src/page/plane.page")
   .clear
@@ -27,16 +27,16 @@
       ]
     },
     created: function (params) {
-      var vConsole = new VConsole();
+      // var vConsole = new VConsole();
       setTimeout(() => {
         let imgWidth = 0
         for (let item of $('.img-list-item')) {
-          console.log(item.width)
+          // console.log(item.width)
           imgWidth += item.width + 10
         }
         $('#imgList').style.width = imgWidth + 1 + 'px'
         $('#o-home').style.width = imgWidth + $tool.getScreenInfo().clientWidth + 1 +'px'
-      }, 2000)
+      }, 5000)
     }
   }
 </script>
