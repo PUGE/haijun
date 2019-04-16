@@ -4,6 +4,7 @@
   video#videoPlay(
     src="@&enter.mp4&",
     preload="auto",
+    autoplay= "true",
     webkit-playsinline="true",
     playsinline="true",
     x5-video-player-type="h5",
@@ -17,21 +18,43 @@
   module.exports = {
     data: {
       isplay: false,
+      canPlay: false,
+      weixinReady: false,
       imgArr: []
     },
     created: function () {
       // 判断是否为安卓手机，如果是安卓手机需要点击播放视频
-      const u = navigator.userAgent, app = navigator.appVersion
-      const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1
+      const u = window.navigator.userAgent.toLowerCase()
+      const isAndroid = u.indexOf('android') > -1 || u.indexOf('linux') > -1
+      const isWeiXin = u.match(/MicroMessenger/i) == 'micromessenger'
+      const isIOS = /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)
 
       // 屏幕大小改变刷新页面
       window.onresize = function(){
         window.location.reload()
       }
-
       // 视频播放器
       const videoPlay = $('#videoPlay')
       const body = $('body')[0]
+
+      // 如果不在微信环境下默认就可以播放
+      this.data.weixinReady = !isWeiXin
+      // ios不会触发oncanplay事件
+      if (isIOS) this.data.canPlay = true
+      // 视频加载完毕事件
+      videoPlay.oncanplay = () => {
+        // alert('视频准备就绪')
+        // 视频可以进行播放
+        this.data.canPlay = true
+        
+        if (this.data.canPlay && this.data.weixinReady && !isAndroid) {
+          // 这里如果不加setTimeout PC端会报错
+          setTimeout(() => {
+            videoPlay.play()
+          }, 0)
+          
+        }
+      }
       // 屏幕信息
       const screenInfo = $tool.getScreenInfo()
       // 视频分辨率比例
@@ -74,7 +97,7 @@
           videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
         }
       } else {
-        console.log(videoRatio, screenInfo.ratio)
+        // console.log(videoRatio, screenInfo.ratio)
         // 判断以高度为基准还是以宽度为基准
         if (videoRatio > screenInfo.ratio) {
           console.log('以高度为基准!')
@@ -98,21 +121,25 @@
         }
       }
       // 方法
-      document.addEventListener('WeixinJSBridgeReady',function () {
-        videoPlay.play();
+      document.addEventListener('WeixinJSBridgeReady', () => {
+        this.data.weixinReady = true
+        // alert('微信准备就绪')
+        // alert(this.data.canPlay)
+        if (this.data.canPlay && this.data.weixinReady) {
+          // alert('开始播放')
+          videoPlay.play()
+        }
       }, false)
 
-      if (isAndroid) {
+      if (isAndroid || (isIOS && !isWeiXin)) {
+        console.log('是安卓, 显示遮蔽层!')
         $('.android-bg')[0].style.display = 'block'
-      } else {
-        // 其他客户端自动播放
-        videoPlay.play()
       }
       // 加载文字图片
       for (var i = 0; i < 42; i++) {
         this.data.imgArr.push(`image/${i}.png`);
       }
-      this.loadImages({loadArr: this.data.imgArr})
+      loadImages({loadArr: this.data.imgArr})
     },
     play: function () {
       // 视频播放器
@@ -120,32 +147,6 @@
       const videoPlay = $('#videoPlay')
       console.log('点击播放')
       videoPlay.play()
-    },
-    loadImages: function (Parameter) {
-      var sources = Parameter.loadArr;
-      var loadingPercent = "";
-      var count = 0;
-      var images = {};
-      var imgNum = sources.length;
-      for (var src in sources) {
-        var path = src;
-        images[path] = new Image();
-        images[path].onload = function () {
-          count++;
-          if (count >= imgNum) {
-            if (Parameter.complete) {
-              Parameter.complete(images);
-            }
-          }
-        };
-        images[path].onerror = function () {
-          count++;
-          if (count >= imgNum) {
-            Parameter.complete(images);
-          }
-        };
-        images[path].src = sources[path];
-      }
     },
     playVideo: function () {
       if (this.data.isplay) return

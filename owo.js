@@ -28,7 +28,7 @@ module.exports = {
       // 是否使用babel处理
       babel: true,
       // 是否异步加载此脚本,请确保此脚本不会对DOM进行操作
-      defer: true
+      defer: false
     },
     {
       name: "vframeplayer",

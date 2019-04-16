@@ -38,15 +38,7 @@
     },
     created: function (params) {
       // var vConsole = new VConsole();
-      setTimeout(() => {
-        let imgWidth = 0
-        for (let item of $('.img-list-item')) {
-          // console.log(item.width)
-          imgWidth += item.width + 10
-        }
-        $('#imgList').style.width = imgWidth + 1 + 'px'
-        $('#o-home').style.width = imgWidth + $tool.getScreenInfo().clientWidth + 1 +'px'
-      }, 5000)
+      
       // 填充角标
       const markerList = $('.corner-marker')
       for (let index = 0; index < markerList.length; index++) {
@@ -54,6 +46,26 @@
         dom.children[0].innerText = index + 1
         dom.children[2].innerText = markerList.length
       }
+      // 开始加载图片
+      let newImgList = this.data.imgList.map((item) => {
+        return item.src
+      })
+      loadImages({
+        loadArr: newImgList,
+        complete: () => {
+          // 图片加载完毕后计算图片所占用位置
+          setTimeout(() => {
+            console.log('内容图已经加载完毕!')
+            let imgWidth = 0
+            for (let item of $('.img-list-item')) {
+              // console.log(item.width)
+              imgWidth += item.width + 10
+            }
+            $('#imgList').style.width = imgWidth + 2 + 'px'
+            $('#o-home').style.width = imgWidth + $tool.getScreenInfo().clientWidth + 2 +'px'
+          }, 0)
+        }
+      })
     },
     switchBlinker: function () {
       const classList = this.$el.getElementsByClassName('blinker')[0].classList
