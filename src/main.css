@@ -4,12 +4,40 @@ body, html, .ox {
   padding: 0;
   height: 100%;
   position: relative;
-  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
-html {
+.img-list {
   background: #3a2d25 url('@&jiaopian.svg&') repeat-x;
 }
+
+.o-videoPlayer {
+  z-index: 99;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 100;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes blink {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 100;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
 /* 清除浮动 */
 .clear {
   clear: both;

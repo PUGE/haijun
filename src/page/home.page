@@ -2,7 +2,17 @@
 .main-box#mainBox
   temple(name="videoPlayer", src="./src/page/videoPlayer.page")
   .img-list#imgList
-    img.img-list-item(@for="item in imgList", src="{{item.src}}", ondragstart="return false;")
+    .img-list-box(@for="item in imgList", @click="switchBlinker")
+      .blinker
+        .text {{item.text}}
+      img.img-list-item(src="{{item.src}}", ondragstart="return false;")
+      // 图片右下角小图标
+      .switch-icon
+      // 左下角角标
+      .corner-marker
+        span.left 1
+        span.division /
+        span.total 10
     .clear
   temple(name="plane", src="./src/page/plane.page")
   .clear
@@ -12,18 +22,18 @@
   module.exports = {
     data: {
       imgList: [
-        {src:"@&1.jpg&"},
-        {src:"@&2.jpg&"},
-        {src:"@&3.jpg&"},
-        {src:"@&4.jpg&"},
-        {src:"@&5.jpg&"},
-        {src:"@&6.jpg&"},
-        {src:"@&7.jpg&"},
-        {src:"@&8.png&"},
-        {src:"@&9.png&"},
-        {src:"@&10.jpg&"},
-        {src:"@&11.png&"},
-        {src:"@&12.png&"},
+        {src:"@&1.jpg&", text:"1949年4月23日 人民海军成立"},
+        {src:"@&2.jpg&", text:"1970年12月26日 第一艘国产核潜艇成功下水"},
+        {src:"@&3.jpg&", text:"1985年11月16日 海军军舰首次出访"},
+        {src:"@&4.jpg&", text:"1988年9月27日 核潜艇水下发射运载火箭成功"},
+        {src:"@&5.jpg&", text:"2002年9月23日 海军首次环球航行圆满结束"},
+        {src:"@&6.jpg&", text:"2008年12月26日 海军首次亚丁湾护航"},
+        {src:"@&7.jpg&", text:"2009年4月23日 中国首次举行多国海军活动"},
+        {src:"@&8.png&", text:"2012年9月25日 中国首艘航空母舰辽宁舰入列"},
+        {src:"@&9.png&", text:"2012年11月23日 舰载机首次着舰"},
+        {src:"@&10.jpg&", text:"2015年3月29日 也门撤侨"},
+        {src:"@&11.png&", text:"2017年4月26日 首艘国产航母下水"},
+        {src:"@&12.png&", text:"2018年4月12日 中央军委在南海海域举行海上阅兵"},
       ]
     },
     created: function (params) {
@@ -37,6 +47,21 @@
         $('#imgList').style.width = imgWidth + 1 + 'px'
         $('#o-home').style.width = imgWidth + $tool.getScreenInfo().clientWidth + 1 +'px'
       }, 5000)
+      // 填充角标
+      const markerList = $('.corner-marker')
+      for (let index = 0; index < markerList.length; index++) {
+        const dom = markerList[index]
+        dom.children[0].innerText = index + 1
+        dom.children[2].innerText = markerList.length
+      }
+    },
+    switchBlinker: function () {
+      const classList = this.$el.getElementsByClassName('blinker')[0].classList
+      if (classList.contains('show')) {
+        classList.remove('show')
+      } else {
+        classList.add('show')
+      }
     }
   }
 </script>
@@ -48,13 +73,69 @@
 }
 
 .img-list {
-  height: calc(100% - 80px);
-  padding: 40px 0;
-  img {
+  height: calc(100% - 56px);
+  padding: 28px 0;
+  .img-list-item {
     height: 100%;
     display: block;
+  }
+  .img-list-box {
+    height: 100%;
+    display: inline;
     margin: 0 5px;
     float: left;
+    position: relative;
+    .show {
+      display: flex;
+    }
+    .corner-marker {
+      position: absolute;
+      left: 5px;
+      bottom: 0;
+      color: white;
+      font-size: 1rem;
+    }
+    .division {
+      margin: 0 2px;
+    }
+    .left {
+      color: red;
+      font-size: 1.4rem;
+    }
+  }
+  .blinker {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.7);
+    .hand {
+      position: absolute;
+      width: 150px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  .switch-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-image: url('@&switch.png&');
+    background-size: 100%;
+  }
+  .text {
+    max-width: 80%;
   }
 }
 </style>

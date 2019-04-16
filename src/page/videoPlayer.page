@@ -1,38 +1,55 @@
 <template lang="pug">
-.video-box#videoBox
+.video-box#videoBox()
+  img.android-bg(src="@&click-bg.jpg&", @click="play")
   video#videoPlay(
     src="@&enter.mp4&",
-    muted,
     preload="auto",
-    autoPlay="true",
     webkit-playsinline="true",
     playsinline="true",
     x5-video-player-type="h5",
     x5-video-player-fullscreen="false",
     ontouchstart="return false;"
   )
+  .text#text
 </template>
 
 <script>
   module.exports = {
-    created: function (params) {
+    data: {
+      isplay: false,
+      imgArr: []
+    },
+    created: function () {
+      // 判断是否为安卓手机，如果是安卓手机需要点击播放视频
+      const u = navigator.userAgent, app = navigator.appVersion
+      const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1
+
+      // 屏幕大小改变刷新页面
+      window.onresize = function(){
+        window.location.reload()
+      }
+
       // 视频播放器
       const videoPlay = $('#videoPlay')
       const body = $('body')[0]
       // 屏幕信息
       const screenInfo = $tool.getScreenInfo()
       // 视频分辨率比例
-      const videoRatio = 640 / 368
+      const videoRatio = 1920 / 1080
       
       let cw = screenInfo.clientWidth
       let ch = screenInfo.clientHeight
-
+      
       console.log(`屏幕分辨率比: ${screenInfo.ratio}`)
       console.log(`视频分辨率比: ${videoRatio}`)
       // 判断是横屏还是竖屏
       if (screenInfo.ratio < 1) {
+        console.log('竖屏模式!')
         cw = screenInfo.clientHeight
         ch = screenInfo.clientWidth
+        // if (isAndroid) {
+        //   cw = cw + 200
+        // }
         // 竖屏处理
         body.style.position = 'absolute'
         body.style.width = screenInfo.clientHeight + 'px'
@@ -40,37 +57,121 @@
         body.style.transform = 'translate3d(0, 0, 0) rotate(90deg)'
         body.style.left = 'calc(50% - ' + screenInfo.clientHeight / 2 + 'px)'
         body.style.top = 'calc(50% - ' + screenInfo.clientWidth / 2 + 'px)'
-      }
 
-      // 判断以高度为基准还是以宽度为基准
-      if (screenInfo.ratio >= 1 && videoRatio > screenInfo.ratio) {
-        const videoWidth = ch * videoRatio
-        videoPlay.style.height = ch + 'px'
-        videoPlay.style.width = videoWidth + 'px'
-        // 将视频1保持在中间
-        videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
+        // 判断以高度为基准还是以宽度为基准
+        if (videoRatio > screenInfo.ratio) {
+          const videoHeight = cw / videoRatio
+          videoPlay.style.width = cw + 'px'
+          videoPlay.style.height = videoHeight + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
+        } else {
+          console.log('以高度为基准!')
+          const videoWidth = ch * videoRatio
+          videoPlay.style.height = ch + 'px'
+          videoPlay.style.width = videoWidth + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
+        }
       } else {
-        const videoHeight = cw / videoRatio
-        videoPlay.style.width = cw + 'px'
-        videoPlay.style.height = videoHeight + 'px'
-        // 将视频1保持在中间
-        videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
+        console.log(videoRatio, screenInfo.ratio)
+        // 判断以高度为基准还是以宽度为基准
+        if (videoRatio > screenInfo.ratio) {
+          console.log('以高度为基准!')
+          const videoWidth = ch * videoRatio
+          videoPlay.style.height = ch + 'px'
+          videoPlay.style.width = videoWidth + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
+        } else {
+          const videoHeight = cw / videoRatio
+          videoPlay.style.width = cw + 'px'
+          videoPlay.style.height = videoHeight + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
+        }
       }
-
-      // 视频播放完毕事件
-      videoPlay.addEventListener('ended', function () {
-        // 视频播放完毕销毁视频
-        $('#videoBox').innerHTML = ''
-        $('#videoBox').style.display = 'none'
-      }, false)
-
+      
+      videoPlay.ontimeupdate = (e) => {
+        if (e.target.currentTime > 18) {
+          this.playVideo()
+        }
+      }
       // 方法
       document.addEventListener('WeixinJSBridgeReady',function () {
         videoPlay.play();
       }, false)
-      document.addEventListener('click', function () {
-        console.log('播放')
+
+      if (isAndroid) {
+        $('.android-bg')[0].style.display = 'block'
+      } else {
+        // 其他客户端自动播放
         videoPlay.play()
+      }
+      // 加载文字图片
+      for (var i = 0; i < 42; i++) {
+        this.data.imgArr.push(`image/${i}.png`);
+      }
+      this.loadImages({loadArr: this.data.imgArr})
+    },
+    play: function () {
+      // 视频播放器
+      this.$el.style.display = 'none'
+      const videoPlay = $('#videoPlay')
+      console.log('点击播放')
+      videoPlay.play()
+    },
+    loadImages: function (Parameter) {
+      var sources = Parameter.loadArr;
+      var loadingPercent = "";
+      var count = 0;
+      var images = {};
+      var imgNum = sources.length;
+      for (var src in sources) {
+        var path = src;
+        images[path] = new Image();
+        images[path].onload = function () {
+          count++;
+          if (count >= imgNum) {
+            if (Parameter.complete) {
+              Parameter.complete(images);
+            }
+          }
+        };
+        images[path].onerror = function () {
+          count++;
+          if (count >= imgNum) {
+            Parameter.complete(images);
+          }
+        };
+        images[path].src = sources[path];
+      }
+    },
+    playVideo: function () {
+      if (this.data.isplay) return
+      this.data.isplay = true
+      console.log('开始播放了')
+      const textRatio = 1018 / 824
+      $("#text").style.height = $tool.getScreenInfo().clientHeight * 0.8 + 'px'
+      $("#text").style.width = $tool.getScreenInfo().clientHeight * 0.5 * textRatio + 'px'
+      
+      let framePlayer = new vFramePlayer({
+        dom: $("#text"),
+        imgArr: this.data.imgArr,
+        useCanvas: true
+      })
+      framePlayer.play(0, 41, {
+        "fps": 6,
+        "useCanvas": true,
+        onComplete: function () {
+          console.log("完成播放")
+          $('#videoBox').style.opacity = 0
+          // 视频播放完毕等候1秒销毁视频
+          setTimeout(() => {
+            $('#videoBox').innerHTML = ''
+            $('#videoBox').style.display = 'none'
+          }, 1000)
+        }
       })
     }
   }
@@ -86,6 +187,8 @@
     text-align: center;
     align-items: center;
     object-fit: fill;
+    opacity: 1;
+    transition: opacity 1s;
     background-color: black;
     video {
       height: 100%;
@@ -94,5 +197,22 @@
       top: 0;
       position: absolute;
     }
+    .text {
+      color: white;
+      position: fixed;
+      left: 5%;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  .android-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: none;
   }
 </style>

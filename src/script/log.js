@@ -1,5 +1,1 @@
-class LGO {
-  constructor(){
-    console.log('log.js')
-  }
-}
+// 方法

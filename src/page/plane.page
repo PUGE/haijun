@@ -4,9 +4,13 @@
   img.people.people-1(src="@&people.png&", @click="flay")
   img.people.people-2(src="@&people.png&", @click="flay")
   img.hand(src="@&hand.png&", @click="flay")
+  img.congratulate#congratulate(src="@&congratulate.png&")
+  // 烟花
+  img.fireworks(src="@&fireworks.gif&")
 </template>
 
 <script>
+  // 声明@&people.png&
   module.exports = {
     created: function () {
       // 屏幕信息
@@ -15,8 +19,19 @@
       $('#planeBox').style.height = screenInfo.clientHeight + 'px'
     },
     flay: function () {
-      $('#plane').style.left = '100%';
-      $('#plane').style.top = '10%';
+      // 隐藏小手
+      $('.hand')[0].style.display = 'none'
+      // 更换航母style图片
+      for (let item of $('.people')) {
+        item.src = '@&people2.png&'
+      }
+      // 飞机起飞
+      $('#plane').style.left = '100%'
+      $('#plane').style.top = '2%'
+      setTimeout(() => {
+        $('#congratulate').style.opacity = 1
+        $('.fireworks')[0].style.opacity = 1
+      }, 1000)
     }
   }
 </script>
@@ -36,11 +51,11 @@
   position: absolute;
   left: 10%;
   top: 21%;
-  transition: all 2s;
+  transition: all 1s ease-in;
 }
 .people {
   position: absolute;
-  width: 18%;
+  height: 30%;
   bottom: 5%;
 }
 .people-1 {
@@ -54,5 +69,25 @@
   height: 8%;
   bottom: 24%;
   left: 28%;
+  animation: blink 1.5s infinite;
+}
+.congratulate {
+  position: absolute;
+  width: 70%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 20%;
+  opacity: 0;
+  transition: all 1s;
+  z-index: 2;
+}
+.fireworks {
+  height: 44%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
 }
 </style>
