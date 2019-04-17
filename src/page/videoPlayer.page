@@ -1,10 +1,10 @@
 <template lang="pug">
 .video-box#videoBox()
-  img.android-bg(src="@&click-bg.jpg&", @click="play")
+  img.android-bg(src="@&click-bg.jpg&", @click="play", ontouchmove="return false;")
   video#videoPlay(
     src="@&enter.mp4&",
     preload="auto",
-    autoplay= "true",
+    autoplay ="autoplay",
     webkit-playsinline="true",
     playsinline="true",
     x5-video-player-type="h5",
@@ -36,7 +36,11 @@
       // 视频播放器
       const videoPlay = $('#videoPlay')
       const body = $('body')[0]
-
+      // 移动端情况下去掉静音标识
+      if (!(isWeiXin && !isAndroid)) {
+        console.log('是安卓, 显示遮蔽层!')
+        $('.android-bg')[0].style.display = 'block'
+      }
       // 如果不在微信环境下默认就可以播放
       this.data.weixinReady = !isWeiXin
       // ios不会触发oncanplay事件
@@ -49,10 +53,9 @@
         
         if (this.data.canPlay && this.data.weixinReady && !isAndroid) {
           // 这里如果不加setTimeout PC端会报错
-          setTimeout(() => {
-            videoPlay.play()
-          }, 0)
-          
+          // setTimeout(() => {
+          //   videoPlay.play()
+          // }, 0)
         }
       }
       // 屏幕信息
@@ -131,10 +134,6 @@
         }
       }, false)
 
-      if (isAndroid || (isIOS && !isWeiXin)) {
-        console.log('是安卓, 显示遮蔽层!')
-        $('.android-bg')[0].style.display = 'block'
-      }
       // 加载文字图片
       for (var i = 0; i < 42; i++) {
         this.data.imgArr.push(`image/${i}.png`);
@@ -150,11 +149,13 @@
     },
     playVideo: function () {
       if (this.data.isplay) return
+      // 处理有些特殊原因导致的播放了但是遮蔽罩没有消失情况
+      $('#videoPlay').style.display = 'none'
       this.data.isplay = true
       console.log('开始播放了')
       const textRatio = 1018 / 824
       $("#text").style.height = $tool.getScreenInfo().clientHeight * 0.8 + 'px'
-      $("#text").style.width = $tool.getScreenInfo().clientHeight * 0.5 * textRatio + 'px'
+      $("#text").style.width = $tool.getScreenInfo().clientHeight * 0.8 * textRatio + 'px'
       
       let framePlayer = new vFramePlayer({
         dom: $("#text"),
@@ -171,7 +172,7 @@
           setTimeout(() => {
             $('#videoBox').innerHTML = ''
             $('#videoBox').style.display = 'none'
-          }, 1000)
+          }, 2000)
         }
       })
     }
