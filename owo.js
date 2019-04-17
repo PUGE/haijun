@@ -84,7 +84,7 @@ module.exports = {
   // 编译模式配置
   build: {
     // 基础目录
-    basePath: './',
+    basePath: './haijun/',
     // 输出配置
     outPut: {
       // 是否压缩css

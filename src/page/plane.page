@@ -12,6 +12,9 @@
 <script>
   // 声明@&people.png&
   module.exports = {
+    data: {
+      isFlay: false
+    },
     created: function () {
       // 屏幕信息
       const screenInfo = $tool.getScreenInfo()
@@ -19,22 +22,27 @@
       $('#planeBox').style.height = screenInfo.clientHeight + 'px'
     },
     flay: function () {
-      // 隐藏小手
-      $('.hand')[0].style.display = 'none'
-      // 更换航母style图片
-      for (let item of $('.people')) {
-        item.src = '@&people2.png&'
-      }
-      // 飞机起飞
-      $('#plane').style.left = '100%'
-      $('#plane').style.top = '2%'
-      setTimeout(() => {
-        $('#congratulate').style.opacity = 1
-        $('.fireworks')[0].style.opacity = 1
+      // 已经飞走就不能点击了
+      if (!this.data.isFlay) {
+        // 标记为已经飞走
+        this.data.isFlay = true
+        // 隐藏小手
+        $('.hand')[0].style.display = 'none'
+        // 更换航母style图片
         for (let item of $('.people')) {
-          item.src = '@&people.png&'
+          item.src = '@&people2.png&'
         }
-      }, 1000)
+        // 飞机起飞
+        $('#plane').style.left = '100%'
+        $('#plane').style.top = '48%'
+        setTimeout(() => {
+          $('#congratulate').style.opacity = 1
+          $('.fireworks')[0].style.opacity = 1
+          for (let item of $('.people')) {
+            item.src = '@&people.png&'
+          }
+        }, 1000)
+      }
     }
   }
 </script>
@@ -52,8 +60,8 @@
 .plane {
   height: 25%;
   position: absolute;
-  left: 10%;
-  top: 21%;
+  left: 1%;
+  top: 50%;
   transition: all 1s ease-in;
 }
 .people {

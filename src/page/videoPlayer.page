@@ -23,6 +23,7 @@
       isplay: false,
       canPlay: false,
       weixinReady: false,
+      isFullScreenPlay: false,
       imgArr: []
     },
     created: function () {
@@ -33,8 +34,10 @@
       const isIOS = /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)
 
       // 屏幕大小改变刷新页面
-      window.onresize = function(){
-        window.location.reload()
+      window.onresize = () => {
+        if (!this.data.isFullScreenPlay) {
+          window.location.reload()
+        }
       }
       // 视频播放器
       const videoPlay = $('#videoPlay')
@@ -58,7 +61,7 @@
       this.changeScreenSize()
       
       videoPlay.ontimeupdate = (e) => {
-        if (e.target.currentTime > 18) {
+        if (e.target.currentTime > 15) {
           this.playVideo()
         }
       }
@@ -88,6 +91,8 @@
       $('.bg-box')[0].style.display = 'none'
       // 进入全屏事件
       videoPlay.addEventListener("x5videoenterfullscreen", () => {
+        // 标记状态
+        this.data.isFullScreenPlay = true
         // 确保android-bg已经进行隐藏
         setTimeout(() => {
           $('body')[0].style.transform = ''
@@ -122,6 +127,9 @@
         $('body')[0].style.transform = 'translate3d(0, 0, 0) rotate(90deg)'
         $('#videoBox').innerHTML = ''
         $('#videoBox').style.display = 'none'
+        setTimeout(() => {
+          this.data.isFullScreenPlay = false
+        }, 1000)
       })
       
       videoPlay.play()
@@ -189,7 +197,8 @@
         body.style.top = 'calc(50% - ' + screenInfo.clientWidth / 2 + 'px)'
 
         // 判断以高度为基准还是以宽度为基准
-        if (videoRatio > screenInfo.ratio) {
+        console.log(videoRatio, $tool.getScreenInfo().ratio)
+        if (videoRatio > $tool.getScreenInfo().ratio) {
           console.log('以高度为基准!')
           const videoWidth = ch * videoRatio
           videoPlay.style.height = ch + 'px'
@@ -206,7 +215,7 @@
       } else {
         // console.log(videoRatio, screenInfo.ratio)
         // 判断以高度为基准还是以宽度为基准
-        if (videoRatio > screenInfo.ratio) {
+        if (videoRatio > $tool.getScreenInfo().ratio) {
           console.log('以高度为基准!')
           const videoWidth = ch * videoRatio
           videoPlay.style.height = ch + 'px'
@@ -235,6 +244,7 @@
     text-align: center;
     align-items: center;
     opacity: 1;
+    z-index: 99;
     transition: all 2s;
     background-color: black;
     video {

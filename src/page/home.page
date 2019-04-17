@@ -23,7 +23,7 @@
   module.exports = {
     data: {
       imgList: [
-        {src:"@&1.jpg&", text:"1949年4月23日 人民海军成立"},
+        {src:"@&1.jpg&", text:"1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立"},
         {src:"@&2.jpg&", text:"1970年12月26日 第一艘国产核潜艇成功下水"},
         {src:"@&3.jpg&", text:"1985年11月16日 海军军舰首次出访"},
         {src:"@&4.jpg&", text:"1988年9月27日 核潜艇水下发射运载火箭成功"},
@@ -39,8 +39,6 @@
     },
     created: function (params) {
       // var vConsole = new VConsole();
-      // 处理用户刷新时滚动条可能不在最顶的bug
-      scrollTo(0, 0)
       // 填充角标
       const markerList = $('.corner-marker')
       for (let index = 0; index < markerList.length; index++) {
@@ -115,17 +113,26 @@
                 </g>
               </svg>`
             $('.hand-tips')[0].style.display = 'block'
+            // 滚动到顶部以解决
+            setTimeout(() => {
+              console.log('滚到最前端!')
+              window.scrollTo(0, 0)
+            }, 0)
           }, 0)
         }
       })
     },
     switchBlinker: function () {
-      const classList = this.$el.getElementsByClassName('blinker')[0].classList
-      if (classList.contains('show')) {
-        classList.remove('show')
+      if (this.$el.children[0].classList.contains('show')) {
+        this.$el.children[0].classList.remove('show')
       } else {
-        classList.add('show')
+        setTimeout(() => {
+          this.$el.children[0].classList.add('show')
+        }, 0)
       }
+      $('.blinker').forEach(element => {
+        element.classList.remove('show')
+      })
     },
     hideTips: function () {
       this.$el.style.display = 'none'

@@ -12,10 +12,6 @@ body, html, .ox {
   background: #3a2d25 url('@&jiaopian.svg&') repeat-x;
 }
 
-.o-videoPlayer {
-  z-index: 99;
-}
-
 @keyframes blink {
 	0% {
 		opacity: 0;
