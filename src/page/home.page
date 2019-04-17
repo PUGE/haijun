@@ -2,8 +2,8 @@
 .main-box#mainBox
   temple(name="videoPlayer", src="./src/page/videoPlayer.page")
   .img-list#imgList
-    .img-list-box(@for="item in imgList", @click="switchBlinker")
-      .blinker
+    .img-list-box(@for="(item, ind) in imgList", @click="$change('showBlinker', {{ind}})")
+      .blinker(@show="showBlinker == {{ind}}")
         .text {{item.text}}
       .hand-tips(@click="hideTips")
       img.img-list-item(src="{{item.src}}", ondragstart="return false;")
@@ -22,6 +22,7 @@
 <script>
   module.exports = {
     data: {
+      showBlinker: '',
       imgList: [
         {src:"@&1.jpg&", text:"1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立"},
         {src:"@&2.jpg&", text:"1970年12月26日 第一艘国产核潜艇成功下水"},
@@ -38,6 +39,7 @@
       ]
     },
     created: function (params) {
+      // $('body')[0].style.overflow = 'hidden'
       // var vConsole = new VConsole();
       // 填充角标
       const markerList = $('.corner-marker')
@@ -56,6 +58,7 @@
       // 计算合适的边距
       $('#imgList').style.height = parseInt(ch * 0.885) + 'px'
       $('#imgList').style.padding = `${parseInt(ch * 0.06)}px 0`
+      
       loadImages({
         loadArr: newImgList,
         complete: () => {
@@ -67,9 +70,9 @@
               // console.log(item.width)
               imgWidth += item.width + 10
             }
-            
             $('#imgList').style.width = imgWidth + 2 + 'px'
             $('#o-home').style.width = imgWidth + cw + 2 +'px'
+            
             // 显示第一幅图的svg
             $('.hand-tips')[0].innerHTML = `<svg version="1.1" class="hand-tip-svg" id="hand-tip-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 137.8" style="enable-background:new 0 0 180 137.8;" xml:space="preserve">
                 <circle id="out-circle" class="st0" cx="38.5" cy="39.6" r="33.4"></circle>
@@ -113,11 +116,9 @@
                 </g>
               </svg>`
             $('.hand-tips')[0].style.display = 'block'
-            // 滚动到顶部以解决
             setTimeout(() => {
-              console.log('滚到最前端!')
-              window.scrollTo(0, 0)
-            }, 0)
+              this.setScrollTop(0)
+            }, 1000)
           }, 0)
         }
       })
@@ -136,6 +137,11 @@
     },
     hideTips: function () {
       this.$el.style.display = 'none'
+    },
+    setScrollTop: function (scroll_top) {
+      document.documentElement.scrollTop = scroll_top
+      window.pageYOffset = scroll_top
+      document.body.scrollTop = scroll_top
     }
   }
 </script>
@@ -184,7 +190,7 @@
     left: 0;
     top: 0;
     color: white;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9;
