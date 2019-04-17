@@ -1,6 +1,7 @@
 <template lang="pug">
 .video-box#videoBox()
-  img.android-bg(src="@&click-bg.jpg&", @click="play", ontouchmove="return false;")
+  .bg-box
+    img.android-bg(src="@&click-bg.jpg&", @click="play", ontouchmove="return false;")
   video#videoPlay(
     src="@&enter.mp4&",
     preload="auto",
@@ -8,7 +9,9 @@
     webkit-playsinline="true",
     playsinline="true",
     x5-video-player-type="h5",
-    x5-video-player-fullscreen="false",
+    x-webkit-airplay="true",
+    x5-video-orientation="landscape",
+    x5-video-player-fullscreen='true',
     ontouchstart="return false;"
   )
   .text#text
@@ -37,86 +40,22 @@
       const videoPlay = $('#videoPlay')
       const body = $('body')[0]
       // 移动端情况下去掉静音标识
-      if (!(isWeiXin && !isAndroid)) {
-        console.log('是安卓, 显示遮蔽层!')
-        $('.android-bg')[0].style.display = 'block'
+      if (isWeiXin && isIOS) {
+        console.log('是微信的ios, 取消遮蔽层!')
+        $('.bg-box')[0].style.display = 'none'
       }
       // 如果不在微信环境下默认就可以播放
       this.data.weixinReady = !isWeiXin
       // ios不会触发oncanplay事件
       if (isIOS) this.data.canPlay = true
-      // 视频加载完毕事件
-      videoPlay.oncanplay = () => {
-        // alert('视频准备就绪')
-        // 视频可以进行播放
-        this.data.canPlay = true
-        
-        if (this.data.canPlay && this.data.weixinReady && !isAndroid) {
-          // 这里如果不加setTimeout PC端会报错
-          // setTimeout(() => {
-          //   videoPlay.play()
-          // }, 0)
-        }
-      }
-      // 屏幕信息
-      const screenInfo = $tool.getScreenInfo()
-      // 视频分辨率比例
-      const videoRatio = 1920 / 1080
-      
-      let cw = screenInfo.clientWidth
-      let ch = screenInfo.clientHeight
-      
-      console.log(`屏幕分辨率比: ${screenInfo.ratio}`)
-      console.log(`视频分辨率比: ${videoRatio}`)
-      // 判断是横屏还是竖屏
-      if (screenInfo.ratio < 1) {
-        console.log('竖屏模式!')
-        cw = screenInfo.clientHeight
-        ch = screenInfo.clientWidth
-        // if (isAndroid) {
-        //   cw = cw + 200
-        // }
-        // 竖屏处理
-        body.style.position = 'absolute'
-        body.style.width = screenInfo.clientHeight + 'px'
-        body.style.height = screenInfo.clientWidth + 'px'
-        body.style.transform = 'translate3d(0, 0, 0) rotate(90deg)'
-        body.style.left = 'calc(50% - ' + screenInfo.clientHeight / 2 + 'px)'
-        body.style.top = 'calc(50% - ' + screenInfo.clientWidth / 2 + 'px)'
 
-        // 判断以高度为基准还是以宽度为基准
-        if (videoRatio > screenInfo.ratio) {
-          const videoHeight = cw / videoRatio
-          videoPlay.style.width = cw + 'px'
-          videoPlay.style.height = videoHeight + 'px'
-          // 将视频1保持在中间
-          videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
-        } else {
-          console.log('以高度为基准!')
-          const videoWidth = ch * videoRatio
-          videoPlay.style.height = ch + 'px'
-          videoPlay.style.width = videoWidth + 'px'
-          // 将视频1保持在中间
-          videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
-        }
-      } else {
-        // console.log(videoRatio, screenInfo.ratio)
-        // 判断以高度为基准还是以宽度为基准
-        if (videoRatio > screenInfo.ratio) {
-          console.log('以高度为基准!')
-          const videoWidth = ch * videoRatio
-          videoPlay.style.height = ch + 'px'
-          videoPlay.style.width = videoWidth + 'px'
-          // 将视频1保持在中间
-          videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
-        } else {
-          const videoHeight = cw / videoRatio
-          videoPlay.style.width = cw + 'px'
-          videoPlay.style.height = videoHeight + 'px'
-          // 将视频1保持在中间
-          videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
-        }
+      // 错误事件
+      videoPlay.onerror = function() {
+        $('#videoBox').innerHTML = ''
+        $('#videoBox').style.display = 'none'
       }
+      
+      this.changeScreenSize()
       
       videoPlay.ontimeupdate = (e) => {
         if (e.target.currentTime > 18) {
@@ -142,15 +81,54 @@
     },
     play: function () {
       // 视频播放器
-      this.$el.style.display = 'none'
+      $('.bg-box')[0].style.top = '-100%'
       const videoPlay = $('#videoPlay')
       console.log('点击播放')
+      // 如果不立即隐藏进入全屏播放时会产生残影
+      $('.bg-box')[0].style.display = 'none'
+      // 进入全屏事件
+      videoPlay.addEventListener("x5videoenterfullscreen", () => {
+        // 确保android-bg已经进行隐藏
+        setTimeout(() => {
+          $('body')[0].style.transform = ''
+          setTimeout(() => {
+            videoPlay.style.top = '0'
+            videoPlay.style.left = '0'
+            // 视频分辨率比例
+            const videoRatio = 1920 / 1080
+            
+            let cw = window.innerWidth
+            let ch = window.innerHeight
+            if (videoRatio >  window.innerWidth / window.innerHeight) {
+              console.log('以高度为基准!')
+              const videoWidth = ch * videoRatio
+              videoPlay.style.height = ch + 'px'
+              videoPlay.style.width = videoWidth + 'px'
+              // 将视频1保持在中间
+              videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
+            } else {
+              const videoHeight = cw / videoRatio
+              videoPlay.style.width = cw + 'px'
+              videoPlay.style.height = videoHeight + 'px'
+              // 将视频1保持在中间
+              videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
+            }
+          }, 500)
+        }, 0)
+        
+      })
+      // 退出全屏事件
+      videoPlay.addEventListener("x5videoexitfullscreen", () => {
+        $('body')[0].style.transform = 'translate3d(0, 0, 0) rotate(90deg)'
+        $('#videoBox').innerHTML = ''
+        $('#videoBox').style.display = 'none'
+      })
+      
       videoPlay.play()
     },
     playVideo: function () {
       if (this.data.isplay) return
-      // 处理有些特殊原因导致的播放了但是遮蔽罩没有消失情况
-      $('#videoPlay').style.display = 'none'
+
       this.data.isplay = true
       console.log('开始播放了')
       const textRatio = 1018 / 824
@@ -175,6 +153,74 @@
           }, 2000)
         }
       })
+    },
+    changeScreenSize: function () {
+      const body = $('body')[0]
+      // 屏幕信息
+      const screenInfo = $tool.getScreenInfo()
+      // 视频分辨率比例
+      const videoRatio = 1920 / 1080
+      
+      let cw = screenInfo.clientWidth
+      let ch = screenInfo.clientHeight
+      
+      console.log(`屏幕分辨率比: ${screenInfo.ratio}`)
+      console.log(`视频分辨率比: ${videoRatio}`)
+
+      if (screenInfo.ratio < 1.77777) {
+        $('.android-bg')[0].style.width = '100%'
+      } else {
+        $('.android-bg')[0].style.height = '100%'
+      }
+      // 判断是横屏还是竖屏
+      if (screenInfo.ratio < 1) {
+        console.log('竖屏模式!')
+        cw = screenInfo.clientHeight
+        ch = screenInfo.clientWidth
+        // if (isAndroid) {
+        //   cw = cw + 200
+        // }
+        // 竖屏处理
+        body.style.position = 'absolute'
+        body.style.width = screenInfo.clientHeight + 'px'
+        body.style.height = screenInfo.clientWidth + 'px'
+        body.style.transform = 'translate3d(0, 0, 0) rotate(90deg)'
+        body.style.left = 'calc(50% - ' + screenInfo.clientHeight / 2 + 'px)'
+        body.style.top = 'calc(50% - ' + screenInfo.clientWidth / 2 + 'px)'
+
+        // 判断以高度为基准还是以宽度为基准
+        if (videoRatio > screenInfo.ratio) {
+          console.log('以高度为基准!')
+          const videoWidth = ch * videoRatio
+          videoPlay.style.height = ch + 'px'
+          videoPlay.style.width = videoWidth + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
+        } else {
+          const videoHeight = cw / videoRatio
+          videoPlay.style.width = cw + 'px'
+          videoPlay.style.height = videoHeight + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
+        }
+      } else {
+        // console.log(videoRatio, screenInfo.ratio)
+        // 判断以高度为基准还是以宽度为基准
+        if (videoRatio > screenInfo.ratio) {
+          console.log('以高度为基准!')
+          const videoWidth = ch * videoRatio
+          videoPlay.style.height = ch + 'px'
+          videoPlay.style.width = videoWidth + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.left = -(videoWidth - cw) / 2 + 'px'
+        } else {
+          const videoHeight = cw / videoRatio
+          videoPlay.style.width = cw + 'px'
+          videoPlay.style.height = videoHeight + 'px'
+          // 将视频1保持在中间
+          videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
+        }
+      }
     }
   }
 </script>
@@ -188,16 +234,19 @@
     position: fixed;
     text-align: center;
     align-items: center;
-    object-fit: fill;
     opacity: 1;
-    transition: opacity 1s;
+    transition: all 2s;
     background-color: black;
     video {
       height: 100%;
+      width: 100%;
       margin: auto;
       left: 0;
       top: 0;
       position: absolute;
+      object-position: "110px 110px";
+      position: fixed;
+      object-fit: fill;
     }
     .text {
       color: white;
@@ -208,13 +257,23 @@
       margin: auto;
     }
   }
-  .android-bg {
+  .bg-box {
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
     height: 100%;
+    width: 100%;
     z-index: 99;
-    display: none;
+    transition: top 1s linear;
+    background-color: black;
+  }
+  .android-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 99;
   }
 </style>

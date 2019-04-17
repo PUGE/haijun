@@ -31,6 +31,9 @@
       setTimeout(() => {
         $('#congratulate').style.opacity = 1
         $('.fireworks')[0].style.opacity = 1
+        for (let item of $('.people')) {
+          item.src = '@&people.png&'
+        }
       }, 1000)
     }
   }
