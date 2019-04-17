@@ -117,8 +117,9 @@
               </svg>`
             $('.hand-tips')[0].style.display = 'block'
             setTimeout(() => {
+              // 跳转到页面最顶端
               this.setScrollTop(0)
-            }, 1000)
+            }, 100)
           }, 0)
         }
       })

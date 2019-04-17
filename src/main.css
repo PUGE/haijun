@@ -8,6 +8,9 @@ body, html, .ox {
 	/* 计算不精确的原因，去掉底部会露出白边 */
 	background-color: black;
 }
+body {
+	opacity: 0;
+}
 .img-list {
   background: #3a2d25 url('@&jiaopian.svg&') repeat-x;
 }

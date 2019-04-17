@@ -195,7 +195,9 @@
         body.style.transform = 'translate3d(0, 0, 0) rotate(90deg)'
         body.style.left = 'calc(50% - ' + screenInfo.clientHeight / 2 + 'px)'
         body.style.top = 'calc(50% - ' + screenInfo.clientWidth / 2 + 'px)'
-
+        setTimeout(() => {
+          body.style.opacity = '1'
+        }, 0)
         // 判断以高度为基准还是以宽度为基准
         console.log(videoRatio, $tool.getScreenInfo().ratio)
         if (videoRatio > $tool.getScreenInfo().ratio) {
@@ -213,6 +215,9 @@
           videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
         }
       } else {
+        setTimeout(() => {
+          body.style.opacity = '1'
+        }, 0)
         // console.log(videoRatio, screenInfo.ratio)
         // 判断以高度为基准还是以宽度为基准
         if (videoRatio > $tool.getScreenInfo().ratio) {
