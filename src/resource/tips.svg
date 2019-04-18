@@ -1,0 +1,209 @@
+<svg version="1.1" class="hand-tip-svg" id="hand-tip-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 137.8" style="enable-background:new 0 0 180 137.8;" xml:space="preserve">
+  <circle id="out-circle" class="st0" cx="38.5" cy="39.6" r="33.4"></circle>
+  <circle id="in-circle" class="st1" cx="38.5" cy="39.6" r="21.1"></circle>
+  <path id="hand" class="st2" d="M102.8,109.8c-8.9-1.5-44.6-7.5-44.6-7.5c-3.9-0.7-6.6-4.2-6.3-8c0-0.3,0-0.5,0.1-0.8
+  c0.3-1.6,1-3,2.1-4.1c1.7-1.7,4.1-2.6,6.7-2.1l18.5,3.1l-0.9-0.9c-0.3-0.2-0.7-0.5-1-0.8l0,0L57,68.4L32.6,44c-3-3-3-7.8,0-10.8
+  c3-3,7.8-3,10.8,0l20.1,20.1l3.1-2.1c-1.9-3-1.6-7,1-9.6c3-3,7.8-3,10.8,0l1,1l2.9-1.9c-2.3-3-2.1-7.3,0.6-10.1
+  c2.9-2.9,7.5-3,10.5-0.3c0.4,0.3,0.7,0.6,1.1,0.9l0.7,0.7l3.6-2.4c-0.7-2.6-0.1-5.4,2-7.4c3-3,7.8-3,10.8,0l2,2
+  c0.5,0.3,14.4,14,14.4,14s0.7,0.8,1,1.2c0.1,0.1,0.2,0.3,0.3,0.4l14.7,14.7l0,0c2.6,2.6,4.4,5.6,5.6,8.8c0,0.1,0.1,0.1,0.1,0.2
+  c0,0,0,0.1,0,0.1c2.9,8.4,1,18-5.7,24.7l0,0l-16.5,16.5c-0.5,0.5-1,1-1.5,1.4C118.2,112.6,111.1,111.2,102.8,109.8z"></path>
+  <g id="txt">
+    <path class="st3" d="M29.3,133.8c-0.8,1.4-1.5,2.5-2.1,3.4l-1.1-0.8c0.7-0.9,1.4-2,2.1-3.2L29.3,133.8z M28.1,126.7H33v-4.9h1.3
+    v1.9h7v1.1h-7v1.9h5.5v6h-1.3V132h-9.2v0.7h-1.3V126.7z M38.6,127.8h-9.2v3.1h9.2V127.8z M31.9,133.1c0.5,1.1,0.9,2.2,1.3,3.3
+    l-1.3,0.4c-0.3-1.1-0.7-2.3-1.1-3.4L31.9,133.1z M35.6,133c0.5,1,1,2.1,1.4,3.2l-1.2,0.5c-0.3-0.9-0.7-2-1.3-3.3L35.6,133z
+      M39.4,133.1c0.8,1.3,1.5,2.4,2,3.4l-1.2,0.6c-0.5-1.1-1.2-2.2-1.9-3.5L39.4,133.1z"></path>
+    <path class="st3" d="M56.3,137.2v-0.7h-11v-5.3h1.3v4.1h4.1v-5.5h-7v-1.2h7v-2.8h-5.8v-1.2h5.8v-2.8h1.4v2.8H58v1.2h-5.9v2.8h7v1.2
+    h-7v5.5h4.2v-4.1h1.3v6H56.3z"></path>
+    <path class="st3" d="M61.8,123.5h6.7v-1.7h1.1v1.7h6.8v1h-5.8c1.6,1.3,3.7,2.2,6.2,2.8c-0.3,0.4-0.5,0.8-0.7,1.1
+    c-0.6-0.2-1.1-0.4-1.6-0.6v6.8h-1.2V134h-8.4v0.7h-1.2V128c-0.5,0.2-1.1,0.5-1.7,0.7c-0.2-0.3-0.5-0.7-0.7-1
+    c2.7-0.8,4.7-1.9,6.2-3.1h-5.6V123.5z M61.4,135.5h15.2v1.1H61.4V135.5z M68.5,127.5v-2.7c-1.2,1.2-2.7,2.2-4.6,3.1h10.6
+    c-1.9-0.8-3.5-1.8-4.9-3v2.6H68.5z M73.3,129h-8.4v1.4h8.4V129z M64.9,132.9h8.4v-1.4h-8.4V132.9z"></path>
+    <path class="st3" d="M79.1,127.2h4.8c0.3-0.4,0.5-0.8,0.7-1.3h-4.4v-1h4.9c0.2-0.4,0.3-0.8,0.5-1.2c-1.8,0.1-3.7,0.1-5.4,0.1
+    c-0.1-0.3-0.1-0.7-0.2-1.1c5-0.1,9.3-0.2,13.1-0.5l0.2,1.1c-2.2,0.1-4.3,0.2-6.4,0.3c-0.1,0.4-0.3,0.9-0.5,1.3h6.8v1h-7.2
+    c-0.2,0.4-0.4,0.9-0.7,1.3h9.1v1h-9.7c-0.3,0.4-0.5,0.8-0.8,1.2h8.6v7.8h-1.1v-0.6h-7.8v0.6h-1.1v-6.1c-0.8,0.9-1.7,1.7-2.7,2.5
+    c-0.2-0.3-0.5-0.7-0.8-1.1c1.8-1.3,3.2-2.7,4.4-4.3h-4.1V127.2z M91.3,130.4h-7.8v1.1h7.8V130.4z M83.5,133.5h7.8v-1.1h-7.8V133.5z
+      M83.5,135.6h7.8v-1.1h-7.8V135.6z"></path>
+    <path class="st3" d="M97.3,122.5h13.8v14.7h-1.2v-0.8H98.5v0.8h-1.2V122.5z M109.9,123.6H98.5v11.7h11.4V123.6z M99,127.4
+    c1.4-1,2.6-2.2,3.5-3.6l1,0.5c-0.2,0.3-0.4,0.6-0.6,0.8h5.5v0.9c-0.8,0.9-1.7,1.8-2.9,2.5c1.1,0.4,2.4,0.7,4,0.9
+    c-0.2,0.5-0.4,0.9-0.5,1.2c-1.8-0.4-3.4-0.9-4.7-1.4c-1.3,0.6-3,1.1-5.1,1.7c-0.1-0.3-0.3-0.7-0.5-1c1.8-0.4,3.3-0.8,4.5-1.3
+    c-0.7-0.5-1.4-1.1-1.9-1.7c-0.5,0.5-1,0.9-1.6,1.4C99.6,128,99.3,127.7,99,127.4z M100.2,133.5l0.3-1.1c2.6,0.3,5.1,0.7,7.5,1.2
+    l-0.4,1.2C105.3,134.3,102.8,133.9,100.2,133.5z M101.8,131.4l0.3-1c1.5,0.2,3.1,0.5,4.8,0.8l-0.3,1.1
+    C104.9,131.9,103.3,131.6,101.8,131.4z M106.9,126.1h-4.8c0,0,0,0,0,0.1c0.6,0.8,1.4,1.4,2.3,1.9
+    C105.4,127.5,106.3,126.8,106.9,126.1z"></path>
+    <path class="st3" d="M119.2,132.3c0,0.3,0.1,0.8,0.2,1.3c-0.8,0.6-1.6,1.3-2.4,1.9c-0.2,0.2-0.5,0.4-0.7,0.7l-0.9-1
+    c0.3-0.3,0.5-0.8,0.5-1.4v-5.6h-1.8v-1.1h3v6.9C117.8,133.5,118.5,132.9,119.2,132.3z M115.9,122c0.8,0.8,1.6,1.6,2.4,2.6l-1.1,0.9
+    c-0.9-1.1-1.6-2-2.3-2.7L115.9,122z M128.2,125v6.4H127v-0.6h-1.5v4.1c0,0.6,0.3,0.9,0.8,0.9h1.1c0.4,0,0.7-0.2,0.8-0.7
+    c0.1-0.6,0.1-1.2,0.2-2.1c0.4,0.1,0.8,0.3,1.3,0.5c-0.1,0.7-0.2,1.4-0.3,2.1c-0.1,0.9-0.7,1.3-1.7,1.3h-1.5c-1.2,0-1.8-0.6-1.8-1.8
+    v-4.3h-1.6c0,1.7-0.3,3-0.8,3.8c-0.6,1-1.7,1.9-3.3,2.6c-0.2-0.4-0.5-0.7-0.8-1.1c1.5-0.6,2.5-1.3,3-2.1c0.5-0.7,0.7-1.8,0.7-3.3
+    h-1.1v0.6h-1.2V125h4.9c0.6-0.9,1.3-2,2-3.1l1.2,0.7c-0.7,0.9-1.3,1.8-1.8,2.4H128.2z M120,122.5l0.9-0.7c0.9,1,1.6,1.8,1.9,2.3
+    l-1,0.7C121.2,124.1,120.6,123.3,120,122.5z M127,126.1h-6.6v3.6h6.6V126.1z"></path>
+  </g>
+  <style>
+    
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 100;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 100;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    .st0 {
+      opacity:.7;
+      fill:none;
+      stroke:#a1091d;
+      stroke-width:7;
+      stroke-miterlimit:10
+    }
+    .st1 {
+      opacity:.51;
+      fill:none;
+      stroke:#a1091d;
+      stroke-width:7;
+      stroke-miterlimit:10
+    }
+    .st2 {
+      fill:#cfcfcf
+    }
+    .st3 {
+      fill:#a1091d
+    }
+    #out-circle {
+      opacity:0;
+      -webkit-animation:circleA 1s 1.6s infinite ease-in-out;
+      animation:circleA 1s 1.6s infinite ease-in-out
+    }
+    #in-circle {
+      opacity:0;
+      -webkit-animation:circleA 1s 1.35s infinite ease-in-out;
+      animation:circleA 1s 1.35s infinite ease-in-out
+    }
+    #hand {
+      -webkit-animation:handmove 1s 1s infinite ease-in-out;
+      animation:handmove 1s 1s infinite ease-in-out
+    }
+    .back-cover {
+      position:relative;
+      display:none;
+      width:100vw;
+      height:100vh;
+      color:#fff;
+      background-color:#000;
+      overflow:hidden;
+      opacity:0;
+      -webkit-transition:1s 5s ease;
+      transition:1s 5s ease
+    }
+    .show .back-cover {
+      display:block;
+      opacity:1
+    }
+    .back-quote {
+      -webkit-transform:rotate(90deg);
+      -ms-transform:rotate(90deg);
+      transform:rotate(90deg);
+      width:100vh;
+      text-align:center;
+      position:absolute;
+      top:40%;
+      left:-45%;
+      font-size:16px
+    }
+    @media screen and (min-height:740px) and (max-height:818px) {
+      .back-quote {
+      top:41%;
+      left:-60%
+    }
+    }.back-quote p {
+      margin-bottom:6px
+    }
+    .back-logo {
+      position:absolute;
+      top:47%;
+      left:60%;
+      width:150px;
+      -webkit-transform:rotate(90deg);
+      -ms-transform:rotate(90deg);
+      transform:rotate(90deg)
+    }
+    .names-box {
+      position:absolute;
+      top:46%;
+      left:-59%;
+      width:92vh;
+      -webkit-transform:rotate(90deg);
+      -ms-transform:rotate(90deg);
+      transform:rotate(90deg);
+      font-size:12px;
+      color:#aaa
+    }
+    @-webkit-keyframes circleA {
+      from {
+        opacity:0
+      }
+      to {
+        opacity:1
+    }
+    }
+    @keyframes circleA {
+      from {
+        opacity:0
+      }
+      to {
+        opacity:1
+      }
+    }
+    @-webkit-keyframes handmove {
+      from {
+        -webkit-transform:translate(10px,10px);
+        transform:translate(10px,10px)
+      }
+      to {
+        -webkit-transform:translate(0,0);
+        transform:translate(0,0)
+      }
+    }
+    @keyframes handmove {
+      from {
+        -webkit-transform:translate(10px,10px);
+        transform:translate(10px,10px)
+      }
+      to {
+        -webkit-transform:translate(0,0);
+        transform:translate(0,0)
+      }
+    }
+    @-webkit-keyframes arrowtip {
+      to {
+        opacity:.5;
+        -webkit-transform:translateY(-6px);
+        transform:translateY(-6px)
+      }
+    }
+    @keyframes arrowtip{to{opacity:.5;-webkit-transform:translateY(-6px);transform:translateY(-6px)}} and (max-height: 818px){.back-quote{top: 41%;left: -60%;}}
+    .hand-tip-svg{
+      width: 25%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  </style>
+</svg>

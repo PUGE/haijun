@@ -7,6 +7,8 @@
   img.congratulate#congratulate(src="@&congratulate.png&")
   // 烟花
   img.fireworks(src="@&fireworks.gif&")
+  // 起飞音乐
+  audio#flayAudio(src="@&flay.mp3&", preload="auto")
 </template>
 
 <script>
@@ -24,6 +26,8 @@
     flay: function () {
       // 已经飞走就不能点击了
       if (!this.data.isFlay) {
+        // 播放点击声音
+        $('#flayAudio').play()
         // 标记为已经飞走
         this.data.isFlay = true
         // 隐藏小手

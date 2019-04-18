@@ -1,5 +1,5 @@
 <template lang="pug">
-.video-box#videoBox(@click="closeVideo")
+.video-box#videoBox
   .bg-box
     img.android-bg(src="@&click-bg.jpg&", @click="play", ontouchmove="return false;")
   video#videoPlay(
@@ -15,6 +15,9 @@
     ontouchstart="return false;"
   )
   .text#text
+  .arrow-box(@show="showArrowBox == true", @click="closeVideo", ontouchmove="return false;")
+    .arrow-text 左滑查看我的精彩瞬间
+    img.arrow(src="@&arrow.png&")
 </template>
 
 <script>
@@ -25,7 +28,8 @@
       canPlay: false,
       weixinReady: false,
       isFullScreenPlay: false,
-      imgArr: []
+      imgArr: [],
+      showArrowBox: false
     },
     created: function () {
       // 判断是否为安卓手机，如果是安卓手机需要点击播放视频
@@ -62,7 +66,7 @@
       this.changeScreenSize()
       
       videoPlay.ontimeupdate = (e) => {
-        if (e.target.currentTime > 16) {
+        if (e.target.currentTime > 18.5) {
           this.playVideo()
         }
       }
@@ -90,6 +94,8 @@
       console.log('点击播放')
       // 如果不立即隐藏进入全屏播放时会产生残影
       $('.bg-box')[0].style.display = 'none'
+      
+
       // 进入全屏事件
       videoPlay.addEventListener("x5videoenterfullscreen", () => {
         // 标记状态
@@ -151,12 +157,13 @@
         useCanvas: true
       })
       framePlayer.play(0, 41, {
-        "fps": 6,
+        "fps": 25,
         "useCanvas": true,
         onComplete: () => {
           console.log("完成播放")
           // 标记为已完成播放
           this.data.playComplete = true
+          $change('showArrowBox', true)
         }
       })
     },
@@ -235,13 +242,15 @@
       }
     },
     closeVideo: function () {
-      console.log('隐藏视频播放')
+      console.log('尝试隐藏视频播放')
       if (this.data.playComplete) {
         $('#videoBox').style.opacity = 0
         // 视频播放完毕等候1秒销毁视频
         setTimeout(() => {
           $('#videoBox').innerHTML = ''
           $('#videoBox').style.display = 'none'
+          // 进入相册播放背景音乐
+          $('#bgAudio').play()
         }, 1000)
       }
     }
@@ -299,5 +308,42 @@
     right: 0;
     margin: auto;
     z-index: 99;
+  }
+  .arrow-box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 120;
+    .arrow {
+      width: 3%;
+      position: absolute;
+      top: 16px;
+      bottom: 0;
+      margin: auto;
+      animation: horizontal 0.8s linear 0s infinite alternate;
+    }
+    .arrow-text {
+      color: white;
+      position: absolute;
+      text-align: center;
+      right: 50px;
+      height: 20px;
+      line-height: 20px;
+      bottom: 45%;
+      font-size: 12px;
+    }
+  }
+  @keyframes horizontal {
+    0% {
+      right: 180px;
+      opacity: 1;
+    }
+    100% {
+      /* 运动最大距离为盒子长度减去球的长度 */
+      right: 190px;
+      opacity: 0.5;
+    }
   }
 </style>

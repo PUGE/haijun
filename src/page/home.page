@@ -2,7 +2,7 @@
 .main-box#mainBox
   temple(name="videoPlayer", src="./src/page/videoPlayer.page")
   .img-list#imgList
-    .img-list-box(@for="(item, ind) in imgList", @click="$change('showBlinker', {{ind}})")
+    .img-list-box(@for="(item, ind) in imgList", @click="switchShow({{ind}})")
       .blinker(@show="showBlinker == {{ind}}")
         .text {{item.text}}
       .hand-tips(@click="hideTips")
@@ -16,6 +16,10 @@
         span.total 10
     .clear
   temple(name="plane", src="./src/page/plane.page")
+  // 背景音乐
+  audio#bgAudio(src="@&bg.mp3&", loop)
+  // 操作音频
+  audio#clickAudio(src="@&click.mp3&", preload="auto")
   .clear
 </template>
 
@@ -124,25 +128,25 @@
         }
       })
     },
-    switchBlinker: function () {
-      if (this.$el.children[0].classList.contains('show')) {
-        this.$el.children[0].classList.remove('show')
-      } else {
-        setTimeout(() => {
-          this.$el.children[0].classList.add('show')
-        }, 0)
-      }
-      $('.blinker').forEach(element => {
-        element.classList.remove('show')
-      })
-    },
     hideTips: function () {
+      // 播放点击声音
+      $('#clickAudio').play()
       this.$el.style.display = 'none'
     },
     setScrollTop: function (scroll_top) {
       document.documentElement.scrollTop = scroll_top
       window.pageYOffset = scroll_top
       document.body.scrollTop = scroll_top
+    },
+    switchShow: function (ind) {
+      // 播放点击声音
+      $('#clickAudio').play()
+      console.log($('#clickAudio'))
+      if (this.data.showBlinker == ind) {
+        $change('showBlinker', null)
+      } else {
+        $change('showBlinker', ind)
+      }
     }
   }
 </script>
