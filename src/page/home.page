@@ -2,11 +2,11 @@
 .main-box#mainBox
   temple(name="videoPlayer", src="./src/page/videoPlayer.page")
   .img-list#imgList
-    .img-list-box(@for="(item, ind) in imgList", @click="switchShow({{ind}})")
-      .blinker(@show="showBlinker == {{ind}}")
-        .text {{item.text}}
+    .img-list-box(@for="(item, ind) in imgList", @click="switchShow")
       .hand-tips(@click="hideTips")
       img.img-list-item(src="{{item.src}}", ondragstart="return false;")
+      .blinker
+        .text {{item.text}}
       // 图片右下角小图标
       .switch-icon
       // 左下角角标
@@ -17,9 +17,9 @@
     .clear
   temple(name="plane", src="./src/page/plane.page")
   // 背景音乐
-  audio#bgAudio(src="@&bg.mp3&", loop)
+  audio#bgAudio(src="http://flv4.people.com.cn/videofile6/pvmsvideo/2019/4/18/WeiQingCheng_9ba4a75a8e4b6e72d99030d6211a417d.m4a", loop, preload="auto")
   // 操作音频
-  audio#clickAudio(src="@&click.mp3&", preload="auto")
+  audio#clickAudio(src="http://flv4.people.com.cn/videofile6/pvmsvideo/2019/4/19/WeiQingCheng_1ee8454b0532e3de973bffc38b51534b.m4a", preload="auto")
   .clear
 </template>
 
@@ -28,18 +28,18 @@
     data: {
       showBlinker: '',
       imgList: [
-        {src:"@&1.jpg&", text:"1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立1949年4月23日 人民海军成立"},
+        {src:"@&1.jpg&", text:"1949年4月23日 人民海军成立"},
         {src:"@&2.jpg&", text:"1970年12月26日 第一艘国产核潜艇成功下水"},
         {src:"@&3.jpg&", text:"1985年11月16日 海军军舰首次出访"},
         {src:"@&4.jpg&", text:"1988年9月27日 核潜艇水下发射运载火箭成功"},
         {src:"@&5.jpg&", text:"2002年9月23日 海军首次环球航行圆满结束"},
         {src:"@&6.jpg&", text:"2008年12月26日 海军首次亚丁湾护航"},
         {src:"@&7.jpg&", text:"2009年4月23日 中国首次举行多国海军活动"},
-        {src:"@&8.png&", text:"2012年9月25日 中国首艘航空母舰辽宁舰入列"},
-        {src:"@&9.png&", text:"2012年11月23日 舰载机首次着舰"},
+        {src:"@&8.jpg&", text:"2012年9月25日 中国首艘航空母舰辽宁舰入列"},
+        {src:"@&9.jpg&", text:"2012年11月23日 舰载机首次着舰"},
         {src:"@&10.jpg&", text:"2015年3月29日 也门撤侨"},
-        {src:"@&11.png&", text:"2017年4月26日 首艘国产航母下水"},
-        {src:"@&12.png&", text:"2018年4月12日 中央军委在南海海域举行海上阅兵"},
+        {src:"@&11.jpg&", text:"2017年4月26日 首艘国产航母下水"},
+        {src:"@&12.jpg&", text:"2018年4月12日 中央军委在南海海域举行海上阅兵"},
       ]
     },
     created: function (params) {
@@ -53,8 +53,9 @@
         dom.children[2].innerText = markerList.length
       }
       // 开始加载图片
-      let newImgList = this.data.imgList.map((item) => {
-        return item.src
+      let newImgList = []
+      $('.img-list-item').forEach(element => {
+        newImgList.push(element.src)
       })
       const screenInfo = $tool.getScreenInfo()
       const cw = screenInfo.ratio < 1 ? screenInfo.clientHeight : screenInfo.clientWidth
@@ -123,13 +124,14 @@
             setTimeout(() => {
               // 跳转到页面最顶端
               this.setScrollTop(0)
-            }, 100)
+            }, 1000)
           }, 0)
         }
       })
     },
     hideTips: function () {
       // 播放点击声音
+      $('#clickAudio').currentTime = 0
       $('#clickAudio').play()
       this.$el.style.display = 'none'
     },
@@ -140,12 +142,14 @@
     },
     switchShow: function (ind) {
       // 播放点击声音
+      $('#clickAudio').currentTime = 0
       $('#clickAudio').play()
-      console.log($('#clickAudio'))
-      if (this.data.showBlinker == ind) {
-        $change('showBlinker', null)
-      } else {
-        $change('showBlinker', ind)
+      const isShow = this.$el.classList.contains('show-blinker')
+      $('.img-list-box').forEach(element => {
+        element.classList.remove('show-blinker')
+      })
+      if (!isShow) {
+        this.$el.classList.add('show-blinker')
       }
     }
   }
@@ -189,13 +193,13 @@
     }
   }
   .blinker {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
     color: white;
-    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9;
@@ -231,5 +235,8 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
+}
+.show-blinker .blinker {
+  display: flex
 }
 </style>

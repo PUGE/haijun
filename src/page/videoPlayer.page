@@ -1,6 +1,6 @@
 <template lang="pug">
 .video-box#videoBox
-  .bg-box
+  .bg-box()
     img.android-bg(src="@&click-bg.jpg&", @click="play", ontouchmove="return false;")
   video#videoPlay(
     src="@&enter.mp4&",
@@ -15,7 +15,7 @@
     ontouchstart="return false;"
   )
   .text#text
-  .arrow-box(@show="showArrowBox == true", @click="closeVideo", ontouchmove="return false;")
+  .arrow-box(@show="showArrowBox == true", @touchstart="closeVideo", @click="closeVideo")
     .arrow-text 左滑查看我的精彩瞬间
     img.arrow(src="@&arrow.png&")
 </template>
@@ -29,6 +29,7 @@
       weixinReady: false,
       isFullScreenPlay: false,
       imgArr: [],
+      videoBoxShow: true,
       showArrowBox: false
     },
     created: function () {
@@ -95,11 +96,11 @@
       // 如果不立即隐藏进入全屏播放时会产生残影
       $('.bg-box')[0].style.display = 'none'
       
-
+      // 标记状态
+      this.data.isFullScreenPlay = true
       // 进入全屏事件
       videoPlay.addEventListener("x5videoenterfullscreen", () => {
-        // 标记状态
-        this.data.isFullScreenPlay = true
+        
         // 确保android-bg已经进行隐藏
         setTimeout(() => {
           $('body')[0].style.transform = ''
@@ -126,7 +127,7 @@
               videoPlay.style.top = -(videoHeight - ch) / 2 + 'px'
             }
           }, 500)
-        }, 0)
+        }, 100)
         
       })
       // 退出全屏事件
@@ -242,17 +243,22 @@
       }
     },
     closeVideo: function () {
+      if (!this.data.videoBoxShow) return
+      console.log('播放背景音乐')
+      $('#bgAudio').play()
       console.log('尝试隐藏视频播放')
       if (this.data.playComplete) {
+        this.data.videoBoxShow = false
         $('#videoBox').style.opacity = 0
         // 视频播放完毕等候1秒销毁视频
         setTimeout(() => {
           $('#videoBox').innerHTML = ''
           $('#videoBox').style.display = 'none'
           // 进入相册播放背景音乐
-          $('#bgAudio').play()
-        }, 1000)
+          
+        }, 500)
       }
+      return false
     }
   }
 </script>
@@ -268,7 +274,7 @@
     align-items: center;
     opacity: 1;
     z-index: 99;
-    transition: all 1s;
+    transition: all 0.5s;
     background-color: black;
     video {
       height: 100%;
@@ -317,7 +323,7 @@
     height: 100%;
     z-index: 120;
     .arrow {
-      width: 3%;
+      width: 20px;
       position: absolute;
       top: 16px;
       bottom: 0;
@@ -328,22 +334,38 @@
       color: white;
       position: absolute;
       text-align: center;
-      right: 50px;
+      right: 60px;
       height: 20px;
       line-height: 20px;
-      bottom: 45%;
+      bottom: 0;
+      top: 16px;
+      margin: auto;
       font-size: 12px;
     }
   }
   @keyframes horizontal {
     0% {
-      right: 180px;
+      right: 190px;
       opacity: 1;
     }
     100% {
       /* 运动最大距离为盒子长度减去球的长度 */
-      right: 190px;
+      right: 200px;
       opacity: 0.5;
+    }
+  }
+  @media screen and (min-width: 900px) {
+    .o-videoPlayer .arrow-box {
+      .arrow-text {
+        font-size: 18px;
+        right: 10px;
+      }
+      .arrow {
+        width: 45px;
+      }
+    }
+    .o-home .img-list .text {
+      font-size: 30px;
     }
   }
 </style>

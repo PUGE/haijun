@@ -8,7 +8,7 @@
   // 烟花
   img.fireworks(src="@&fireworks.gif&")
   // 起飞音乐
-  audio#flayAudio(src="@&flay.mp3&", preload="auto")
+  audio#flayAudio(src="http://flv4.people.com.cn/videofile6//pvmsvideo/2019/4/18/WeiQingCheng_91531a2cf2fc83ef0692bbcc86b3d708.m4a", preload="auto")
 </template>
 
 <script>
@@ -26,26 +26,38 @@
     flay: function () {
       // 已经飞走就不能点击了
       if (!this.data.isFlay) {
+        $('#flayAudio').onplay = () => {
+          const u = window.navigator.userAgent.toLowerCase()
+          const isIOS = /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)
+          setTimeout(() => {
+            // 隐藏小手
+            $('.hand')[0].style.display = 'none'
+            // 更换航母style图片
+            for (let item of $('.people')) {
+              item.src = '@&people2.png&'
+            }
+            // 飞机起飞
+            $('#plane').style.left = '100%'
+            $('#plane').style.top = '48%'
+            setTimeout(() => {
+              $('#congratulate').style.opacity = 1
+              for (let item of $('.people')) {
+                item.src = '@&people.png&'
+              }
+            }, 1000)
+            setTimeout(() => {
+              $('.fireworks')[0].style.opacity = 1
+            }, 3000)
+          }, isIOS ? 300 : 0)
+        }
         // 播放点击声音
-        $('#flayAudio').play()
+        console.log('飞机起飞')
         // 标记为已经飞走
         this.data.isFlay = true
-        // 隐藏小手
-        $('.hand')[0].style.display = 'none'
-        // 更换航母style图片
-        for (let item of $('.people')) {
-          item.src = '@&people2.png&'
-        }
-        // 飞机起飞
-        $('#plane').style.left = '100%'
-        $('#plane').style.top = '48%'
-        setTimeout(() => {
-          $('#congratulate').style.opacity = 1
-          $('.fireworks')[0].style.opacity = 1
-          for (let item of $('.people')) {
-            item.src = '@&people.png&'
-          }
-        }, 1000)
+        $('#flayAudio').play()
+        $('#plane').style.left = '10%'
+        // 停止播放背景音乐
+        $('#bgAudio').pause()
       }
     }
   }

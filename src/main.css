@@ -7,6 +7,7 @@ body, html, .ox {
 	-webkit-overflow-scrolling: touch;
 	/* 计算不精确的原因，去掉底部会露出白边 */
 	background-color: black;
+	overflow-y: hidden;
 }
 body {
 	opacity: 0;
