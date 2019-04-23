@@ -5,7 +5,6 @@
   video#videoPlay(
     src="@&enter.mp4&",
     preload="auto",
-    autoplay ="autoplay",
     webkit-playsinline="true",
     playsinline="true",
     x5-video-player-type="h5",
@@ -100,10 +99,11 @@
       this.data.isFullScreenPlay = true
       // 进入全屏事件
       videoPlay.addEventListener("x5videoenterfullscreen", () => {
-        
+        // alert('sdf')
+        $('body')[0].style.transform = ''
         // 确保android-bg已经进行隐藏
         setTimeout(() => {
-          $('body')[0].style.transform = ''
+          // $('body')[0].style.transform = ''
           setTimeout(() => {
             videoPlay.style.top = '0'
             videoPlay.style.left = '0'
