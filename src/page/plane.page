@@ -20,30 +20,30 @@
     created: function () {
       // 屏幕信息
       const screenInfo = $tool.getScreenInfo()
-      $('#planeBox').style.width = screenInfo.clientWidth + 'px'
-      $('#planeBox').style.height = screenInfo.clientHeight + 'px'
+      $('#planeBox')[0].style.width = screenInfo.clientWidth + 'px'
+      $('#planeBox')[0].style.height = screenInfo.clientHeight + 'px'
     },
     flay: function () {
       // 已经飞走就不能点击了
       if (!this.data.isFlay) {
-        $('#flayAudio').onplay = () => {
+        $('#flayAudio')[0].onplay = () => {
           const u = window.navigator.userAgent.toLowerCase()
           const isIOS = /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)
           setTimeout(() => {
             // 隐藏小手
             $('.hand')[0].style.display = 'none'
             // 更换航母style图片
-            for (let item of $('.people')) {
-              item.src = '@&people2.png&'
-            }
+            $('.people').forEach(element => {
+              element.src = '@&people2.png&'
+            })
             // 飞机起飞
-            $('#plane').style.left = '100%'
-            $('#plane').style.top = '48%'
+            $('#plane')[0].style.left = '100%'
+            $('#plane')[0].style.top = '48%'
             setTimeout(() => {
-              $('#congratulate').style.opacity = 1
-              for (let item of $('.people')) {
-                item.src = '@&people.png&'
-              }
+              $('#congratulate')[0].style.opacity = 1
+              $('.people').forEach(element => {
+                element.src = '@&people.png&'
+              })
             }, 1000)
             setTimeout(() => {
               $('.fireworks')[0].style.opacity = 1
@@ -54,10 +54,10 @@
         console.log('飞机起飞')
         // 标记为已经飞走
         this.data.isFlay = true
-        $('#flayAudio').play()
-        $('#plane').style.left = '10%'
+        $('#flayAudio')[0].play()
+        $('#plane')[0].style.left = '10%'
         // 停止播放背景音乐
-        $('#bgAudio').pause()
+        $('#bgAudio')[0].pause()
       }
     }
   }

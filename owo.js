@@ -80,6 +80,8 @@ module.exports = {
     server: true,
     // 自动重新加载
     autoReload: true,
+    // 远程调试
+    remoteDebug: true
   },
   // 编译模式配置
   build: {

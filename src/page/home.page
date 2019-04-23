@@ -61,8 +61,8 @@
       const cw = screenInfo.ratio < 1 ? screenInfo.clientHeight : screenInfo.clientWidth
       const ch = screenInfo.ratio < 1 ? screenInfo.clientWidth  : screenInfo.clientHeight
       // 计算合适的边距
-      $('#imgList').style.height = parseInt(ch * 0.885) + 'px'
-      $('#imgList').style.padding = `${parseInt(ch * 0.06)}px 0`
+      $('#imgList')[0].style.height = parseInt(ch * 0.885) + 'px'
+      $('#imgList')[0].style.padding = `${parseInt(ch * 0.06)}px 0`
       
       loadImages({
         loadArr: newImgList,
@@ -71,12 +71,11 @@
           setTimeout(() => {
             console.log('内容图已经加载完毕!')
             let imgWidth = 0
-            for (let item of $('.img-list-item')) {
-              // console.log(item.width)
-              imgWidth += item.width + 10
-            }
-            $('#imgList').style.width = imgWidth + 2 + 'px'
-            $('#o-home').style.width = imgWidth + cw + 2 +'px'
+            $('.img-list-item').forEach(element => {
+              imgWidth += element.width + 10
+            })
+            $('#imgList')[0].style.width = imgWidth + 2 + 'px'
+            $('#o-home')[0].style.width = imgWidth + cw + 2 +'px'
             
             // 显示第一幅图的svg
             $('.hand-tips')[0].innerHTML = `<svg version="1.1" class="hand-tip-svg" id="hand-tip-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 137.8" style="enable-background:new 0 0 180 137.8;" xml:space="preserve">
@@ -131,8 +130,8 @@
     },
     hideTips: function () {
       // 播放点击声音
-      $('#clickAudio').currentTime = 0
-      $('#clickAudio').play()
+      $('#clickAudio')[0].currentTime = 0
+      $('#clickAudio')[0].play()
       this.$el.style.display = 'none'
     },
     setScrollTop: function (scroll_top) {
@@ -142,8 +141,8 @@
     },
     switchShow: function (ind) {
       // 播放点击声音
-      $('#clickAudio').currentTime = 0
-      $('#clickAudio').play()
+      $('#clickAudio')[0].currentTime = 0
+      $('#clickAudio')[0].play()
       const isShow = this.$el.classList.contains('show-blinker')
       $('.img-list-box').forEach(element => {
         element.classList.remove('show-blinker')

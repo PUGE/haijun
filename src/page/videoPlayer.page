@@ -45,7 +45,7 @@
         }
       }
       // 视频播放器
-      const videoPlay = $('#videoPlay')
+      const videoPlay = $('#videoPlay')[0]
       const body = $('body')[0]
       // 移动端情况下去掉静音标识
       if (isWeiXin && isIOS) {
@@ -59,8 +59,8 @@
 
       // 错误事件
       videoPlay.onerror = function() {
-        $('#videoBox').innerHTML = ''
-        $('#videoBox').style.display = 'none'
+        $('#videoBox')[0].innerHTML = ''
+        $('#videoBox')[0].style.display = 'none'
       }
       
       this.changeScreenSize()
@@ -90,7 +90,7 @@
     play: function () {
       // 视频播放器
       $('.bg-box')[0].style.top = '-100%'
-      const videoPlay = $('#videoPlay')
+      const videoPlay = $('#videoPlay')[0]
       console.log('点击播放')
       // 如果不立即隐藏进入全屏播放时会产生残影
       $('.bg-box')[0].style.display = 'none'
@@ -99,7 +99,6 @@
       this.data.isFullScreenPlay = true
       // 进入全屏事件
       videoPlay.addEventListener("x5videoenterfullscreen", () => {
-        // alert('sdf')
         $('body')[0].style.transform = ''
         // 确保android-bg已经进行隐藏
         setTimeout(() => {
@@ -133,8 +132,8 @@
       // 退出全屏事件
       videoPlay.addEventListener("x5videoexitfullscreen", () => {
         $('body')[0].style.transform = 'translate3d(0, 0, 0) rotate(90deg)'
-        $('#videoBox').innerHTML = ''
-        $('#videoBox').style.display = 'none'
+        $('#videoBox')[0].innerHTML = ''
+        $('#videoBox')[0].style.display = 'none'
         setTimeout(() => {
           this.data.isFullScreenPlay = false
         }, 1000)
@@ -149,11 +148,11 @@
       this.data.isplay = true
       console.log('开始播放了')
       const textRatio = 1018 / 824
-      $("#text").style.height = $tool.getScreenInfo().clientHeight * 0.8 + 'px'
-      $("#text").style.width = $tool.getScreenInfo().clientHeight * 0.8 * textRatio + 'px'
+      $("#text")[0].style.height = $tool.getScreenInfo().clientHeight * 0.8 + 'px'
+      $("#text")[0].style.width = $tool.getScreenInfo().clientHeight * 0.8 * textRatio + 'px'
       
       let framePlayer = new vFramePlayer({
-        dom: $("#text"),
+        dom: $("#text")[0],
         imgArr: this.data.imgArr,
         useCanvas: true
       })
@@ -245,15 +244,15 @@
     closeVideo: function () {
       if (!this.data.videoBoxShow) return
       console.log('播放背景音乐')
-      $('#bgAudio').play()
+      $('#bgAudio')[0].play()
       console.log('尝试隐藏视频播放')
       if (this.data.playComplete) {
         this.data.videoBoxShow = false
-        $('#videoBox').style.opacity = 0
+        $('#videoBox')[0].style.opacity = 0
         // 视频播放完毕等候1秒销毁视频
         setTimeout(() => {
-          $('#videoBox').innerHTML = ''
-          $('#videoBox').style.display = 'none'
+          $('#videoBox')[0].innerHTML = ''
+          $('#videoBox')[0].style.display = 'none'
           // 进入相册播放背景音乐
           
         }, 500)
